@@ -1,0 +1,54 @@
+.mm-tab {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+.mm-tab > li {
+  display: block;
+  position: static;
+}
+
+.mm-tab > li > a {
+  position: relative;
+  display: block;
+  padding: .75rem 2.5rem .75rem 2rem;
+  outline-width: 0;
+  background: #f8f9fa;
+  border-radius: 5px 5px 0 0;
+}
+
+.mm-tab > li > a:hover,
+.mm-tab > li > a:focus,
+.mm-tab > li > a:active {
+  text-decoration: none;
+}
+
+.mm-tab > li.active > a {
+  background: #fff;
+  color: #fd7e14;
+}
+
+@media (min-width: 992px) {
+  .mm-tab > li {
+    display: inline-block;
+  }
+  .mm-tab > li.active > a {
+    border: 1px solid #ddd;
+    border-bottom-width: 0px;
+    background: #fff;
+    z-index: 2;
+    padding-right: 3rem;
+    color: #fd7e14;
+  }
+  .mm-tab > li > .mm-tab-item {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    right: 0;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+}

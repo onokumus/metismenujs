@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>metisMenu - index</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/metismenujs@1.0.0/dist/metismenujs.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/noty/lib/noty.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/noty/lib/themes/relax.css">
+
+  <link rel="stylesheet" href="assets/css/app.css">
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-1669764-16', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar navbar-expand-md navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+          <strong>metisMenu <small>v3</small></strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Examples</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="mm-vertical.html">Vertical Menu</a>
+                <a class="dropdown-item" href="mm-horizontal.html">Horizontal Menu</a>
+                <a class="dropdown-item" href="mm-folder.html">Folder View</a>
+                <a class="dropdown-item" href="mm-vertical-hover.html">Hover Option For Desktop</a>
+                <a class="dropdown-item" href="mm-animate.html">Animate</a>
+                <a class="dropdown-item" href="mm-event.html">Event</a>
+                <a class="dropdown-item" href="mm-event2.html">Event 2</a>
+                <a class="dropdown-item" href="mm-dispose.html">Stop &amp; Start metisMenu</a>
+                <a class="dropdown-item" href="mm-ajax.html">Ajax</a>
+                <a class="dropdown-item" href="mm-faq.html">FAQ</a><a class="dropdown-item" href="mm-tab.html">Tab</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Templates</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown02">
+                <a class="dropdown-item" href="http://chl.onokumus.com" target="_blank">Chaldene Admin</a>
+                <a class="dropdown-item" href="http://elk.onokumus.com" target="_blank">Elektron Admin</a>
+                <a class="dropdown-item" href="http://onokumus.github.io/twbuttons/" target="_blank">twbuttons</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://onokumus.com" target="_blank">onokumus</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+    <div class="container pt-5">
+      <section class="jumbotron text-center">
+        
+          <h1 class="jumbotron-heading">metisMenu</h1>
+          <p class="lead text-muted">A jQuery menu plugin</p>
+          <p>
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/onokumus/metismenu" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star onokumus/metismenu on GitHub">Star</a>
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/onokumus/metismenu/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork onokumus/metismenu on GitHub">Fork</a>
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/onokumus/metismenu/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download onokumus/metismenu on GitHub">Download</a>
+  </p>
+  <p>
+<p><a href="https://www.npmjs.com/package/metismenu"><img src="https://img.shields.io/npm/v/metismenu.svg?style=flat" alt="NPM version"></a> <a href="https://npmjs.org/package/metismenu"><img src="https://img.shields.io/npm/dm/metismenu.svg?style=flat" alt="NPM monthly downloads"></a>  <a href="https://npmjs.org/package/metismenu"><img src="https://img.shields.io/npm/dt/metismenu.svg?style=flat" alt="NPM total downloads"></a> <a href="https://travis-ci.org/onokumus/metismenu"><img src="https://img.shields.io/travis/onokumus/metismenu.svg?style=flat&amp;label=Travis" alt="Linux Build Status"></a> <a href="https://www.jsdelivr.com/package/npm/metismenu"><img src="https://data.jsdelivr.com/v1/package/npm/metismenu/badge" alt=""></a> <a href="https://packagist.org/packages/onokumus/metismenu"><img src="https://img.shields.io/packagist/v/onokumus/metismenu.svg" alt="Packagist"></a></p>
+  </p>
+        
+      </section>
+
+      <h2><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Table of Contents</h2>
+      <ul>
+      <li><a href="#getting-started">Getting started</a>
+      <ul>
+      <li><a href="#install">Install</a></li>
+      <li><a href="#download">Download</a></li>
+      </ul>
+      </li>
+      <li><a href="#usage">Usage</a>
+      <ul>
+      <li><a href="#stopping-list-opening-on-certain-elements">Stopping list opening on certain elements</a></li>
+      </ul>
+      </li>
+      <li><a href="#options">Options</a>
+      <ul>
+      <li><a href="#toggle">toggle</a></li>
+      <li><a href="#activeclass-deprecated">activeClass <code>deprecated</code></a></li>
+      <li><a href="#collapseclass-deprecated">collapseClass <code>deprecated</code></a></li>
+      <li><a href="#collapseinclass-deprecated">collapseInClass <code>deprecated</code></a></li>
+      <li><a href="#collapsingclass-deprecated">collapsingClass <code>deprecated</code></a></li>
+      <li><a href="#preventdefault-removed">preventDefault <em>removed</em></a></li>
+      <li><a href="#triggerelement">triggerElement</a></li>
+      <li><a href="#parenttrigger">parentTrigger</a></li>
+      <li><a href="#submenu">subMenu</a></li>
+      </ul>
+      </li>
+      <li><a href="#api">API</a>
+      <ul>
+      <li><a href="#dispose">dispose</a></li>
+      <li><a href="#update">update</a></li>
+      </ul>
+      </li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#about">About</a>
+      <ul>
+      <li><a href="#related-projects">Related projects</a></li>
+      <li><a href="#contributors">Contributors</a></li>
+      <li><a href="#contributing">Contributing</a></li>
+      <li><a href="#release-history">Release History</a></li>
+      <li><a href="#author">Author</a></li>
+      <li><a href="#license">License</a></li>
+      </ul>
+      </li>
+      </ul>
+      <p><em>(TOC generated by <a href="https://github.com/verbose/verb">verb</a> using <a href="https://github.com/jonschlinkert/markdown-toc">markdown-toc</a>)</em></p>
+      <h2><a id="user-content-getting-started" class="anchor" aria-hidden="true" href="#getting-started"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting started</h2>
+      <h3><a id="user-content-install" class="anchor" aria-hidden="true" href="#install"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h3>
+      <p>Install with <a href="https://www.npmjs.com/" rel="nofollow">npm</a>:</p>
+      <div class="highlight highlight-source-shell"><pre>$ npm install --save metismenu@next</pre></div>
+      <p>Install with <a href="https://yarnpkg.com" rel="nofollow">yarn</a>:</p>
+      <div class="highlight highlight-source-shell"><pre>$ yarn add metismenu@next</pre></div>
+      <p>Install with <a href="https://getcomposer.org/" rel="nofollow">composer</a></p>
+      <div class="highlight highlight-source-shell"><pre>$ composer require onokumus/metismenu:dev-master</pre></div>
+      <h3><a id="user-content-download" class="anchor" aria-hidden="true" href="#download"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Download</h3>
+      <p><a href="https://github.com/onokumus/metismenu/archive/v3.zip">download</a></p>
+      <h2><a id="user-content-usage" class="anchor" aria-hidden="true" href="#usage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+      <ol>
+      <li>Include metismenu StyleSheet</li>
+      </ol>
+      <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>//cdnjs.cloudflare.com/ajax/libs/metisMenu/3.0.0-alpha.0/metisMenu.min.css<span class="pl-pds">"</span></span>&gt;
+      <span class="pl-c"><span class="pl-c">&lt;!--</span> OR <span class="pl-c">--&gt;</span></span>  
+      &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.jsdelivr.net/npm/metismenu@3.0.0-beta.0/dist/metisMenu.css<span class="pl-pds">"</span></span>&gt;</pre></div>
+      <ol start="2">
+      <li>Include metisMenu plugin's code</li>
+      </ol>
+      <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>//cdnjs.cloudflare.com/ajax/libs/metisMenu/3.0.0-alpha.0/metisMenu.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+      <span class="pl-c"><span class="pl-c">&lt;!--</span> OR <span class="pl-c">--&gt;</span></span>
+      &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://cdn.jsdelivr.net/npm/metismenu@3.0.0-beta.0/dist/metisMenu.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+      <ol start="3">
+      <li>Add class <code>metismenu</code> to unordered list</li>
+      </ol>
+      <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>metismenu<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>menu<span class="pl-pds">"</span></span>&gt;
+      
+      &lt;/<span class="pl-ent">ul</span>&gt;</pre></div>
+      <ol start="4">
+      <li>Make expand/collapse controls accessible</li>
+      </ol>
+      <blockquote>
+      <p>Be sure to add <code>aria-expanded</code> to the element <code>a</code>. This attribute explicitly defines the current state of the collapsible element to screen readers and similar assistive technologies. If the collapsible element is closed by default, it should have a value of <code>aria-expanded="false"</code>. If you've set the collapsible element's parent <code>li</code> element to be open by default using the <code>active</code> class, set <code>aria-expanded="true"</code> on the control instead. The plugin will automatically toggle this attribute based on whether or not the collapsible element has been opened or closed.</p>
+      </blockquote>
+      <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>metismenu<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>menu<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>active<span class="pl-pds">"</span></span>&gt;
+          &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">aria-expanded</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;Menu 1&lt;/<span class="pl-ent">a</span>&gt;
+          &lt;<span class="pl-ent">ul</span>&gt;
+          ...
+          &lt;/<span class="pl-ent">ul</span>&gt;
+        &lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span>&gt;
+          &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">aria-expanded</span>=<span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span>&gt;Menu 2&lt;/<span class="pl-ent">a</span>&gt;
+          &lt;<span class="pl-ent">ul</span>&gt;
+          ...
+          &lt;/<span class="pl-ent">ul</span>&gt;
+        &lt;/<span class="pl-ent">li</span>&gt;
+        ...
+        &lt;/<span class="pl-ent">ul</span>&gt;</pre></div>
+      <ol start="5">
+      <li>Arrow Options</li>
+      </ol>
+      <blockquote>
+      <p>add <code>has-arrow</code> class to <code>a</code> element</p>
+      </blockquote>
+      <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>metismenu<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>menu<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>active<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">a</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>has-arrow<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">aria-expanded</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;Menu 1&lt;/<span class="pl-ent">a</span>&gt;
+        &lt;<span class="pl-ent">ul</span>&gt;
+        ...
+        &lt;/<span class="pl-ent">ul</span>&gt;
+      &lt;/<span class="pl-ent">li</span>&gt;
+      &lt;<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">a</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>has-arrow<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">aria-expanded</span>=<span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span>&gt;Menu 2&lt;/<span class="pl-ent">a</span>&gt;
+        &lt;<span class="pl-ent">ul</span>&gt;
+        ...
+        &lt;/<span class="pl-ent">ul</span>&gt;
+      &lt;/<span class="pl-ent">li</span>&gt;
+      ...
+      &lt;/<span class="pl-ent">ul</span>&gt;</pre></div>
+      <ol start="6">
+      <li>Call the plugin:</li>
+      </ol>
+      <div class="highlight highlight-source-js"><pre>  <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>);</pre></div>
+      <h3><a id="user-content-stopping-list-opening-on-certain-elements" class="anchor" aria-hidden="true" href="#stopping-list-opening-on-certain-elements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stopping list opening on certain elements</h3>
+      <p>Setting aria-disabled="true" in the <code>&lt;a&gt;</code> element as shown will stop metisMenu opening the menu for that particular list. This can be changed dynamically and will be obeyed correctly:</p>
+      <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">aria-expanded</span>=<span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> <span class="pl-e">aria-disabled</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;List 1&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+      <h2><a id="user-content-options" class="anchor" aria-hidden="true" href="#options"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h2>
+      <h4><a id="user-content-toggle" class="anchor" aria-hidden="true" href="#toggle"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>toggle</h4>
+      <p>Type: <code>Boolean</code>
+      Default: <code>true</code></p>
+      <p>For auto collapse support.</p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>, {
+         toggle<span class="pl-k">:</span> <span class="pl-c1">false</span>
+       });</pre></div>
+      <h4><a id="user-content-activeclass-deprecated" class="anchor" aria-hidden="true" href="#activeclass-deprecated"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>activeClass <code>deprecated</code></h4>
+      <blockquote>
+      <p>This option will be remove from next version.</p>
+      </blockquote>
+      <p>Type: <code>String</code>
+      Default: <code>active</code></p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>, {
+         activeClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>active<span class="pl-pds">'</span></span>
+       });</pre></div>
+      <h4><a id="user-content-collapseclass-deprecated" class="anchor" aria-hidden="true" href="#collapseclass-deprecated"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>collapseClass <code>deprecated</code></h4>
+      <blockquote>
+      <p>This option will be remove from next version.</p>
+      </blockquote>
+      <p>Type: <code>String</code>
+      Default: <code>collapse</code></p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>, {
+         collapseClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>collapse<span class="pl-pds">'</span></span>
+       });</pre></div>
+      <h4><a id="user-content-collapseinclass-deprecated" class="anchor" aria-hidden="true" href="#collapseinclass-deprecated"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>collapseInClass <code>deprecated</code></h4>
+      <blockquote>
+      <p>This option will be remove from next version.</p>
+      </blockquote>
+      <p>Type: <code>String</code>
+      Default: <code>in</code></p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>, {
+         collapseInClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>in<span class="pl-pds">'</span></span>
+       });</pre></div>
+      <h4><a id="user-content-collapsingclass-deprecated" class="anchor" aria-hidden="true" href="#collapsingclass-deprecated"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>collapsingClass <code>deprecated</code></h4>
+      <blockquote>
+      <p>This option will be remove from next version.</p>
+      </blockquote>
+      <p>Type: <code>String</code>
+      Default: <code>collapsing</code></p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>, {
+         collapsingClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>collapsing<span class="pl-pds">'</span></span>
+       });</pre></div>
+      <h4><a id="user-content-preventdefault-removed" class="anchor" aria-hidden="true" href="#preventdefault-removed"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>preventDefault <em>removed</em></h4>
+      <p>Type: <code>Boolean</code>
+      Default: <code>true</code></p>
+      <blockquote>
+      <p>Prevents or allows dropdowns' onclick events after expanding/collapsing.</p>
+      </blockquote>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>, {
+         preventDefault<span class="pl-k">:</span> <span class="pl-c1">false</span>
+       });</pre></div>
+      <p><em>since from version 2.7.0</em></p>
+      <h4><a id="user-content-triggerelement" class="anchor" aria-hidden="true" href="#triggerelement"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>triggerElement</h4>
+      <p>Type: <code>css selector</code>
+      Default: <code>a</code></p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>, {
+         triggerElement<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.nav-link<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> bootstrap 4</span>
+       });</pre></div>
+      <h4><a id="user-content-parenttrigger" class="anchor" aria-hidden="true" href="#parenttrigger"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>parentTrigger</h4>
+      <p>Type: <code>css selector</code>
+      Default: <code>li</code></p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>, {
+         parentTrigger<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.nav-item<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> bootstrap 4</span>
+       });</pre></div>
+      <h4><a id="user-content-submenu" class="anchor" aria-hidden="true" href="#submenu"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>subMenu</h4>
+      <p>Type: <code>css selector</code>
+      Default: <code>ul</code></p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>, {
+         subMenu<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.nav.flex-column<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> bootstrap 4</span>
+       });</pre></div>
+      <h2><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h2>
+      <h4><a id="user-content-dispose" class="anchor" aria-hidden="true" href="#dispose"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>dispose</h4>
+      <p>For stop and destroy metisMenu.</p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">const</span> <span class="pl-c1">mm</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>);
+       <span class="pl-smi">mm</span>.<span class="pl-en">dispose</span>();</pre></div>
+      <h4><a id="user-content-update" class="anchor" aria-hidden="true" href="#update"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>update</h4>
+      <p>Re-init metisMenu.</p>
+      <div class="highlight highlight-source-js"><pre> <span class="pl-k">const</span> <span class="pl-c1">mm</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MetisMenu</span>(<span class="pl-s"><span class="pl-pds">"</span>#menu<span class="pl-pds">"</span></span>);
+       <span class="pl-smi">mm</span>.<span class="pl-en">dispose</span>();
+       <span class="pl-c"><span class="pl-c">//</span> ajax ...</span>
+       <span class="pl-smi">mm</span>.<span class="pl-en">update</span>();</pre></div>
+      <h2><a id="user-content-events" class="anchor" aria-hidden="true" href="#events"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Events</h2>
+      <table>
+      <thead>
+      <tr>
+      <th><strong>Event Type</strong></th>
+      <th><strong>Description</strong></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>show.metisMenu</td>
+      <td>This event fires immediately when the <code>show</code> instance method is called.</td>
+      </tr>
+      <tr>
+      <td>shown.metisMenu</td>
+      <td>This event is fired when a collapse <code>ul</code> element has been made visible to the user (will wait for CSS transitions to complete).</td>
+      </tr>
+      <tr>
+      <td>hide.metisMenu</td>
+      <td>This event is fired immediately when the <code>hide</code> method has been called.</td>
+      </tr>
+      <tr>
+      <td>hidden.metisMenu</td>
+      <td>This event is fired when a collapse <code>ul</code> element has been hidden from the user (will wait for CSS transitions to complete).</td>
+      </tr></tbody></table>
+   
+
+     
+      <h3><a id="user-content-author" class="anchor" aria-hidden="true" href="#author"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Author</h3>
+      <p><strong>Osman Nuri Okumus</strong></p>
+      <ul>
+      <li><a href="https://github.com/onokumus">github/onokumus</a></li>
+      <li><a href="https://twitter.com/onokumus" rel="nofollow">twitter/onokumus</a></li>
+      </ul>
+      <h3><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h3>
+      <p>Copyright © 2018, <a href="https://github.com/onokumus">Osman Nuri Okumus</a>.
+      Released under the <a href="/onokumus/metismenu/blob/v3/LICENSE">MIT License</a>.</p>
+      <hr>
+      <p><em>This file was generated by <a href="https://github.com/verbose/verb-generate-readme">verb-generate-readme</a>, v0.7.0, on June 19, 2018.</em></p>
+      
+
+    </div>
+
+  </main>
+
+  <footer class="text-muted">
+    <div class="container">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- responsive reklam -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5671633872085649" data-ad-slot="6251877391" data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/metismenujs@1.0.0/dist/metismenujs.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/noty/lib/noty.min.js"></script>
+
+    <script src="assets/js/index.js" charset="utf-8"></script>
+
+</body>
+
+</html>
