@@ -1,0 +1,23 @@
+{
+  "name": "onokumus/metismenujs",
+  "description": "A menu plugin",
+  "keywords": [
+    "menu",
+    "plugin",
+    "web",
+    "css",
+    "js"
+  ],
+  "homepage": "https://github.com/onokumus/metismenujs",
+  "authors": [
+    {
+      "name": "Osman Nuri Okumus",
+      "email": "onokumus@gmail.com",
+      "homepage": "http://onokumus.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/onokumus/metismenujs/issues"
+  },
+  "license": "MIT"
+}
