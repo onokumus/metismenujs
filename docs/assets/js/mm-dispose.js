@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   deleteElem.addEventListener("click", function(event) {
-    removeElement(document.querySelector('#removable'));
-    // mm1.dispose();
+    mm1.dispose();
+    removeElement(document.querySelector('#menu1 #removable'));
     new Noty({
       text: 'Menu 1 removed',
       layout: 'topRight',
@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       timeout: 2000
     }).show();
 
-    // mm1.update();
+    mm1.update();
 
     deleteElem.classList.remove("btn-danger");
     deleteElem.classList.add("btn-success");
     deleteElem.innerHTML = "Menu 1 removed";
-    // deleteElem.setAttribute("disabled", "disabled");
+    deleteElem.setAttribute("disabled", "disabled");
   });
 });
