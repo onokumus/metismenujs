@@ -12,7 +12,8 @@
   "style": "dist/metismenujs.css",
   "files": [
     "dist",
-    "src"
+    "src",
+    "scss"
   ],
   "scripts": {
     "js:dev": "rollup -c -w",
@@ -96,14 +97,14 @@
     "related": {
       "list": [
         "chl",
-        "elektron",
+        "metismenu",
         "onoffcanvas",
         "twbuttons"
       ]
     },
     "reflinks": [
       "chl",
-      "elektron",
+      "metismenu",
       "onoffcanvas",
       "twbuttons"
     ]
