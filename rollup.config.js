@@ -10,10 +10,11 @@ const banner = `/*!
 * Under ${pkg.license} License
 */`;
 
+const production = !process.env.ROLLUP_WATCH;
 
 export default [
   {
-    input: 'dist/modules/index.js',
+    input: pkg.module,
     output: {
       file: pkg.main,
       banner,
@@ -21,7 +22,7 @@ export default [
     }
   },
   {
-    input: 'dist/modules/index.js',
+    input: pkg.module,
     output: {
       name: 'MetisMenu',
       file: pkg.browser,
@@ -30,7 +31,7 @@ export default [
       banner
     },
     plugins: [
-      babel()
+      production && babel()
     ],
   },
 ];
