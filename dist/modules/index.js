@@ -88,7 +88,7 @@ class MetisMenu {
             if (ev.currentTarget.tagName === "A") {
                 ev.preventDefault();
             }
-            const li = ev.target.parentNode;
+            const li = ev.currentTarget.parentNode;
             const ul = li.querySelector(this.config.subMenu);
             this.toggle(ul);
         }

@@ -1,5 +1,5 @@
 /*!
-* metismenujs - v1.0.0
+* metismenujs - v1.0.1
 * MetisMenu with Vanilla-JS
 * https://github.com/onokumus/metismenujs#readme
 *
@@ -110,7 +110,7 @@ class MetisMenu {
             if (ev.currentTarget.tagName === "A") {
                 ev.preventDefault();
             }
-            const li = ev.target.parentNode;
+            const li = ev.currentTarget.parentNode;
             const ul = li.querySelector(this.config.subMenu);
             this.toggle(ul);
         }

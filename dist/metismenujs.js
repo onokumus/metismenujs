@@ -1,5 +1,5 @@
 /*!
-* metismenujs - v1.0.0
+* metismenujs - v1.0.1
 * MetisMenu with Vanilla-JS
 * https://github.com/onokumus/metismenujs#readme
 *
@@ -196,7 +196,7 @@
           ev.preventDefault();
         }
 
-        var li = ev.target.parentNode;
+        var li = ev.currentTarget.parentNode;
         var ul = li.querySelector(this.config.subMenu);
         this.toggle(ul);
       }
