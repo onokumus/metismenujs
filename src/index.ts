@@ -11,7 +11,16 @@ class MetisMenu {
   private cacheConfig: IMMOptions;
   private listenerOb: any[];
 
-  constructor(element: HTMLElement, options?: IMMOptions) {
+  /**
+   * Creates an instance of OnoffCanvas.
+   *
+   * @constructor
+   * @param {HTMLElement | string} element
+   * @param {IMMOptions} [options]
+   * @memberof MetisMenu
+   */
+
+  constructor(element: HTMLElement | string, options?: IMMOptions) {
     this.element =
       typeof element === "string" ? document.querySelector(element) : element;
     this.cacheEl = this.element;
