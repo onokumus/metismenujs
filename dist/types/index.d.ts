@@ -9,7 +9,15 @@ declare class MetisMenu {
     private cacheEl;
     private cacheConfig;
     private listenerOb;
-    constructor(element: HTMLElement, options?: IMMOptions);
+    /**
+     * Creates an instance of OnoffCanvas.
+     *
+     * @constructor
+     * @param {HTMLElement | string} element
+     * @param {IMMOptions} [options]
+     * @memberof MetisMenu
+     */
+    constructor(element: HTMLElement | string, options?: IMMOptions);
     update(): void;
     dispose(): void;
     on(event: MetisMenuEvents, fn: EventListenerOrEventListenerObject): this;
