@@ -1,4 +1,6 @@
-import babel from 'rollup-plugin-babel';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import typescript from 'rollup-plugin-typescript';
 import pkg from './package.json';
 
 const banner = `/*!
@@ -14,24 +16,60 @@ const production = !process.env.ROLLUP_WATCH;
 
 export default [
   {
-    input: pkg.module,
-    output: {
-      file: pkg.main,
-      banner,
-      format: 'cjs',
-    }
+    input: 'src/index.ts',
+    output: [
+      {
+        file: pkg.main,
+        banner,
+        format: 'cjs',
+      },
+    ],
+    plugins: [
+      typescript({
+        typescript: require('typescript'),
+        target: 'ES5'
+      }),
+      resolve(),
+      commonjs(),
+    ],
   },
   {
-    input: pkg.module,
-    output: {
-      name: 'MetisMenu',
-      file: pkg.browser,
-      format: 'umd',
-      sourcemap: true,
-      banner
-    },
+    input: 'src/index.ts',
+    output: [
+      {
+        file: pkg.module,
+        banner,
+        format: 'es',
+      },
+    ],
     plugins: [
-      production && babel()
+      typescript({
+        typescript: require('typescript'),
+        target: 'es5',
+        declaration: true
+      }),
+      resolve(),
+      commonjs(),
+    ],
+  },
+  {
+    input: 'src/index.ts',
+    output: [
+      {
+        name: 'OnoffCanvas',
+        file: pkg.browser,
+        banner,
+        format: 'umd',
+        sourcemap: true
+      },
+    ],
+    plugins: [
+      typescript({
+        typescript: require('typescript'),
+        target: 'ES5'
+      }),
+      resolve(),
+      commonjs()
     ],
   },
 ];
