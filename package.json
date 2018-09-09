@@ -1,6 +1,6 @@
 {
   "name": "metismenujs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MetisMenu with Vanilla-JS",
   "main": "dist/cjs/index.js",
   "module": "dist/modules/index.js",
@@ -16,7 +16,7 @@
     "scss"
   ],
   "scripts": {
-    "js:dev": "rollup -c -w",
+    "js:dev": "rollup -cw",
     "js:prod": "rollup -c",
     "js:minify": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/metismenujs.js.map,includeSources,url=metismenujs.min.js.map\" --output dist/metismenujs.min.js dist/metismenujs.js",
     "css": "npm-run-all --parallel css-compile --sequential css-prefix css-minify",
@@ -25,11 +25,11 @@
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/metismenujs.min.css dist/metismenujs.css",
     "js": "npm-run-all --parallel lint ts-compile --sequential js-compile js-minify",
     "lint": "tslint -c tslint.json src/**/*.ts",
-    "ts-compile": "tsc",
+    "ts-compile": "tsc --emitDeclarationOnly",
     "js-compile": "rollup --config rollup.config.js",
     "js-minify": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/metismenujs.js.map,includeSources,url=metismenujs.min.js.map\" --output dist/metismenujs.min.js dist/metismenujs.js",
-    "build": "npm-run-all --parallel css js",
-    "watch": "npm-run-all --parallel watch-css watch-js",
+    "build": "run-p css js",
+    "watch": "run-p watch-css watch-js",
     "watch-css": "nodemon --ignore src/ --ignore dist/ -e scss -x \"npm run css\"",
     "watch-js": "nodemon --ignore scss/ --ignore dist/ -e ts -x \"npm run js\""
   },

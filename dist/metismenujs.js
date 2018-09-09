@@ -1,5 +1,5 @@
 /*!
-* metismenujs - v1.0.2
+* metismenujs - v1.0.3
 * MetisMenu with Vanilla-JS
 * https://github.com/onokumus/metismenujs#readme
 *
@@ -9,7 +9,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    (global.OnoffCanvas = factory());
+    (global.MetisMenu = factory());
 }(this, (function () { 'use strict';
 
     /*! *****************************************************************************
