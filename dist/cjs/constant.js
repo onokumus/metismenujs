@@ -10,8 +10,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var __chunk_1 = require('./chunk-d3b966f9.js');
-
 var Default = {
     parentTrigger: "li",
     subMenu: "ul",
