@@ -7,5 +7,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     });
   });
-  const mm2 = new MetisMenu("#menu2");
 });

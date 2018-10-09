@@ -67,14 +67,4 @@
         min-width: 100%;
         z-index: 1001;
     }
-    .topbar-nav.is-hoverable .metismenu > li > ul {
-      height: auto !important;
-    }
-    .topbar-nav.is-hoverable .metismenu > li:hover > ul {
-        display: block;
-    }
-    .topbar-nav.is-hoverable .metismenu > li:hover > a.has-arrow:after {
-        -webkit-transform: rotate(-135deg);
-                transform: rotate(-135deg);
-    }
 }
