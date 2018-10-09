@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>MetisMenuJS - Github Style</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/metismenujs.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/noty/lib/noty.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/noty/lib/themes/relax.css">
+
+  <link rel="stylesheet" href="assets/css/app.css">
+
+  <link rel="stylesheet" href="assets/css/mm-github.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1669764-16"></script>
+  <script>
+    if (location.hostname === "onokumus.com") {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'UA-1669764-16');
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="navbar navbar-expand-md navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+          <strong>MetisMenu<span class="text-warning">JS</span></strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Examples</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="mm-vertical.html">Vertical Menu</a>
+                <a class="dropdown-item" href="mm-horizontal.html">Horizontal Menu</a>
+                <a class="dropdown-item" href="mm-folder.html">Folder View</a>
+                <a class="dropdown-item" href="mm-vertical-hover.html">Hover Option For Desktop</a>
+                <a class="dropdown-item" href="mm-animate.html">Animate</a>
+                <a class="dropdown-item" href="mm-event.html">Event</a>
+                <a class="dropdown-item" href="mm-event2.html">Event 2</a>
+                <a class="dropdown-item" href="mm-dispose.html">Stop &amp; Start metisMenu</a>
+                <a class="dropdown-item" href="mm-ajax.html">Ajax</a>
+                <a class="dropdown-item" href="mm-faq.html">FAQ</a>
+                <a class="dropdown-item" href="mm-tab.html">Tab</a>
+                <a class="dropdown-item" href="mm-github.html">Github Menu</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Templates</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown02">
+                <a class="dropdown-item" href="http://chl.onokumus.com" target="_blank">Chaldene Admin</a>
+                <a class="dropdown-item" href="http://elk.onokumus.com" target="_blank">Elektron Admin</a>
+                <a class="dropdown-item" href="http://onokumus.github.io/twbuttons/" target="_blank">twbuttons</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://onokumus.com" target="_blank">onokumus</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main role="main">
+    <div class="container">
+      <section class="jumbotron text-center">
+        <h2 class="jumbotron-heading">Github Menu</h2>
+        <a class="btn btn-outline-info" href="assets/css/mm-github.css" target="_top">
+          <i class="fa fa-fw fa-css3"></i>
+          Download CSS
+        </a>
+        <a class="btn btn-outline-warning" href="assets/js/mm-github.js" target="_top">
+          <i class="fa fa-fw fa-file-code-o"></i>
+          Download JS</a>
+      </section>
+
+
+      <header class="mm-github-header">
+        <a href="#"><i class="fa fa-2x fa-github"></i></a>
+        <ul class="metismenu mm-github">
+          <li><a href="#" class="has-notification">
+              <i class="fa fa-fw fa-bell"></i>
+            </a></li>
+          <li>
+            <a href="#">
+              <i class="fa fa-fw fa-plus"></i>
+              <i class="fa fa-fw fa-caret-down"></i>
+            </a>
+            <ul>
+              <li><a href="#">New repository</a></li>
+              <li><a href="#">Import repository</a></li>
+              <li><a href="#">New gist</a></li>
+              <li><a href="#">New organization</a></li>
+              <li class="mm-divider"></li>
+              <li class="mm-header">This repository</li>
+              <li><a href="">New issue</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <img src="https://placeimg.com/20/20/people" alt="user" width="20" height="20">
+
+              <i class="fa fa-fw fa-caret-down"></i>
+            </a>
+            <ul>
+              <li>
+                <a href="#">
+                  Signed as
+                  <div><strong>user</strong></div>
+                </a>
+              </li>
+              <li class="mm-divider"></li>
+              <li><a href="#">Your profile</a></li>
+              <li><a href="#">Your repositories</a></li>
+              <li><a href="#">Your stars</a></li>
+              <li><a href="#">Your gists</a></li>
+              <li class="mm-divider"></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Sign out</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- /.metismenu mm-github -->
+      </header>
+    </div>
+    <!-- /.container -->
+  </main>
+  <footer class="text-muted mt-5">
+    <div class="container">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- responsive reklam -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5671633872085649" data-ad-slot="6251877391"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        if (location.hostname === "onokumus.com") {
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+      </script>
+    </div>
+  </footer>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/metismenujs.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/noty/lib/noty.min.js"></script>
+
+  <script src="assets/js/mm-github.js"></script>
+</body>
+
+</html>

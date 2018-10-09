@@ -1,0 +1,115 @@
+.mm-github-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.25rem;
+  padding: .75rem;
+  color: hsla(0, 0%, 100%, 0.75);
+  background-color: #24292e;
+}
+
+.mm-github-header a {
+  color: #fff;
+  text-decoration: none;
+}
+.mm-github-header a:focus,
+.mm-github-header a:active {
+    outline: 1px dotted #fff;
+}
+
+
+.mm-github {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-left: auto;
+}
+.mm-github > li {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+}
+.mm-github a {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  font-size: 14px;
+  outline: 0;
+  color: #24292e;
+  text-decoration: none;
+}
+
+.mm-github > li > a {
+  color: #fff;
+}
+
+.mm-divider {
+  height: 1px;
+  margin: 8px 1px;
+  background-color: #e1e4e8;
+}
+.mm-header {
+  font-size: 12px;
+  color: #586069;
+  padding: 0.5rem 0.5rem 0;
+}
+.mm-github > li > ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  min-width: 11rem;
+  border: 1px solid #ddd;
+  background: #fff;
+  z-index: 1;
+  border-radius: 0.25rem;
+}
+.mm-github > li > ul::before,
+.mm-github > li > ul::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-bottom-color: #ddd;
+  top: -1rem;
+  right: 1rem;
+}
+.mm-github > li > ul::after {
+  top: -14px;
+  border-bottom-color: #fff;
+}
+.mm-github ul.collapsing {
+  position: absolute;
+}
+.mm-github ul > li:first-child {
+  margin-top: 0.5rem;
+}
+.mm-github ul > li:last-child {
+  margin-bottom: 0.5rem;
+}
+
+.mm-github ul a:hover {
+  color: #fff;
+  background: #0366d6;
+}
+
+.has-notification {
+  position: relative;
+}
+.has-notification::after {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  color: #fff;
+  background-image: linear-gradient(#54a3ff, #006eed);
+  background-clip: padding-box;
+  border: 2px solid #24292e;
+  border-radius: 50%;
+  content: "";
+}
