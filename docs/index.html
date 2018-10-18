@@ -110,6 +110,7 @@
 
       </section>
       <h2>Table of Contents</h2>
+
       <ul>
         <li><a href="#getting-started">Getting started</a>
           <ul>
@@ -166,23 +167,23 @@
       <ol>
         <li>Include metismenujs StyleSheet</li>
       </ol>
-      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//cdnjs.cloudflare.com/ajax/libs/metismenujs/1.0.0/metismenujs.min.css"</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- OR --&gt;</span>  
-<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/metismenujs@1.0.0/dist/metismenujs.min.css"</span>&gt;</span>
+      <pre><code class="language-html">&lt;link rel="stylesheet" href="https://unpkg.com/metismenujs/dist/metismenujs.min.css"&gt;
+&lt;!-- OR --&gt;  
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.css"&gt;
 </code></pre>
       <ol start="2">
         <li>Include metismenujs plugin's code</li>
       </ol>
-      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//cdnjs.cloudflare.com/ajax/libs/metismenujs/1.0.0/metismenujs.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- OR --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/metismenujs@1.0.0/dist/metismenujs.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+      <pre><code class="language-html">&lt;script src="https://unpkg.com/metismenujs/dist/metismenujs.min.js"&gt;&lt;/script&gt;
+&lt;!-- OR --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.js"&gt;&lt;/script&gt;
 </code></pre>
       <ol start="3">
         <li>Add class <code>metismenu</code> to unordered list</li>
       </ol>
-      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"metismenu"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"menu"</span>&gt;</span>
+      <pre><code class="language-html">&lt;ul class="metismenu" id="menu"&gt;
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+&lt;/ul&gt;
 </code></pre>
       <ol start="4">
         <li>Make expand/collapse controls accessible</li>
@@ -195,21 +196,21 @@
           class, set <code>aria-expanded=&quot;true&quot;</code> on the control instead. The plugin will automatically
           toggle this attribute based on whether or not the collapsible element has been opened or closed.</p>
       </blockquote>
-      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"metismenu"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"menu"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"active"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"true"</span>&gt;</span>Menu 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <pre><code class="language-html">&lt;ul class="metismenu" id="menu"&gt;
+  &lt;li class="active"&gt;
+    &lt;a href="#" aria-expanded="true"&gt;Menu 1&lt;/a&gt;
+    &lt;ul&gt;
     ...
-    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>Menu 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="#" aria-expanded="false"&gt;Menu 2&lt;/a&gt;
+    &lt;ul&gt;
     ...
-    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    &lt;/ul&gt;
+  &lt;/li&gt;
   ...
-  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  &lt;/ul&gt;
 </code></pre>
       <ol start="5">
         <li>Arrow Options</li>
@@ -217,21 +218,21 @@
       <blockquote>
         <p>add <code>has-arrow</code> class to <code>a</code> element</p>
       </blockquote>
-      <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"metismenu"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"menu"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"active"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"has-arrow"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"true"</span>&gt;</span>Menu 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <pre><code class="language-html">&lt;ul class="metismenu" id="menu"&gt;
+  &lt;li class="active"&gt;
+    &lt;a class="has-arrow" href="#" aria-expanded="true"&gt;Menu 1&lt;/a&gt;
+    &lt;ul&gt;
+    ...
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a class="has-arrow" href="#" aria-expanded="false"&gt;Menu 2&lt;/a&gt;
+    &lt;ul&gt;
+    ...
+    &lt;/ul&gt;
+  &lt;/li&gt;
   ...
-  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"has-arrow"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>Menu 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-  ...
-  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-...
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  &lt;/ul&gt;
 </code></pre>
       <ol start="6">
         <li>Call the plugin:</li>
