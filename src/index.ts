@@ -1,4 +1,4 @@
-import { ClassNames, Default, MetisMenuEvents } from "./constant";
+import { ClassName, Default, MetisMenuEvents } from "./constant";
 import { IMMOptions } from "./interface";
 
 class MetisMenu {
@@ -12,7 +12,7 @@ class MetisMenu {
   private listenerOb: any[];
 
   /**
-   * Creates an instance of OnoffCanvas.
+   * Creates an instance of MetisMenu.
    *
    * @constructor
    * @param {HTMLElement | string} element
@@ -85,14 +85,15 @@ class MetisMenu {
   }
 
   private init(): void {
+    this.element.classList.add(ClassName.METIS);
     this.ulArr = [].slice.call(
       this.element.querySelectorAll(this.config.subMenu)
     );
     for (const ul of this.ulArr) {
       const li = ul.parentNode;
-      ul.classList.add(ClassNames.collapseClass);
+      ul.classList.add(ClassName.COLLAPSE);
 
-      if (li.classList.contains(ClassNames.activeClass)) {
+      if (li.classList.contains(ClassName.ACTIVE)) {
         this.show(ul);
       } else {
         this.hide(ul);
@@ -130,7 +131,7 @@ class MetisMenu {
   }
 
   private toggle(ul) {
-    if (ul.parentNode.classList.contains(ClassNames.activeClass)) {
+    if (ul.parentNode.classList.contains(ClassName.ACTIVE)) {
       this.hide(ul);
     } else {
       this.show(ul);
@@ -140,12 +141,12 @@ class MetisMenu {
   private show(ul) {
     if (
       this.isTransitioning ||
-      ul.classList.contains(ClassNames.collapseInClass)
+      ul.classList.contains(ClassName.COLLAPSING)
     ) {
       return;
     }
     const complete = () => {
-      ul.classList.remove(ClassNames.collapsingClass);
+      ul.classList.remove(ClassName.COLLAPSING);
       ul.style.height = "";
       ul.removeEventListener("transitionend", complete);
       this.setTransitioning(false);
@@ -155,15 +156,16 @@ class MetisMenu {
     };
 
     const li = ul.parentNode;
-    li.classList.add(ClassNames.activeClass);
+    li.classList.add(ClassName.ACTIVE);
 
     const a = li.querySelector(this.config.triggerElement);
     a.setAttribute("aria-expanded", "true");
+    a.classList.remove(ClassName.COLLAPSED);
 
     ul.style.height = "0px";
-    ul.classList.remove(ClassNames.collapseClass);
-    ul.classList.remove(ClassNames.collapseInClass);
-    ul.classList.add(ClassNames.collapsingClass);
+    ul.classList.remove(ClassName.COLLAPSE);
+    ul.classList.remove(ClassName.SHOW);
+    ul.classList.add(ClassName.COLLAPSING);
     const eleParentSiblins = [].slice
       .call(li.parentNode.children)
       .filter(c => c !== li);
@@ -178,8 +180,8 @@ class MetisMenu {
 
     this.setTransitioning(true);
 
-    ul.classList.add(ClassNames.collapseClass);
-    ul.classList.add(ClassNames.collapseInClass);
+    ul.classList.add(ClassName.COLLAPSE);
+    ul.classList.add(ClassName.SHOW);
     ul.style.height = ul.scrollHeight + "px";
     this.emit("show.metisMenu", {
       showElement: ul
@@ -190,7 +192,7 @@ class MetisMenu {
   private hide(ul) {
     if (
       this.isTransitioning ||
-      !ul.classList.contains(ClassNames.collapseInClass)
+      !ul.classList.contains(ClassName.SHOW)
     ) {
       return;
     }
@@ -199,11 +201,12 @@ class MetisMenu {
     });
 
     const li = ul.parentNode;
-    li.classList.remove(ClassNames.activeClass);
+    li.classList.remove(ClassName.ACTIVE);
 
     const complete = () => {
-      ul.classList.remove(ClassNames.collapsingClass);
-      ul.classList.add(ClassNames.collapseClass);
+      ul.classList.remove(ClassName.COLLAPSING);
+      ul.classList.add(ClassName.COLLAPSE);
+      ul.style.height = "";
       ul.removeEventListener("transitionend", complete);
       this.setTransitioning(false);
       this.emit("hidden.metisMenu", {
@@ -214,9 +217,9 @@ class MetisMenu {
     ul.style.height = ul.getBoundingClientRect().height + "px";
     ul.style.height = ul.offsetHeight + "px";
 
-    ul.classList.add(ClassNames.collapsingClass);
-    ul.classList.remove(ClassNames.collapseClass);
-    ul.classList.remove(ClassNames.collapseInClass);
+    ul.classList.add(ClassName.COLLAPSING);
+    ul.classList.remove(ClassName.COLLAPSE);
+    ul.classList.remove(ClassName.SHOW);
     this.setTransitioning(true);
 
     ul.addEventListener("transitionend", complete);
@@ -225,6 +228,7 @@ class MetisMenu {
 
     const a = li.querySelector(this.config.triggerElement);
     a.setAttribute("aria-expanded", "false");
+    a.classList.add(ClassName.COLLAPSED);
   }
 
   private setTransitioning(isTransitioning) {
