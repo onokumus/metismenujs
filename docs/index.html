@@ -192,12 +192,12 @@
         <p>Be sure to add <code>aria-expanded</code> to the element <code>a</code>. This attribute explicitly defines
           the current state of the collapsible element to screen readers and similar assistive technologies. If the
           collapsible element is closed by default, it should have a value of <code>aria-expanded=&quot;false&quot;</code>.
-          If you've set the collapsible element's parent <code>li</code> element to be open by default using the <code>active</code>
+          If you've set the collapsible element's parent <code>li</code> element to be open by default using the <code>mm-active</code>
           class, set <code>aria-expanded=&quot;true&quot;</code> on the control instead. The plugin will automatically
           toggle this attribute based on whether or not the collapsible element has been opened or closed.</p>
       </blockquote>
       <pre><code class="language-html">&lt;ul class="metismenu" id="menu"&gt;
-  &lt;li class="active"&gt;
+  &lt;li class="mm-active"&gt;
     &lt;a href="#" aria-expanded="true"&gt;Menu 1&lt;/a&gt;
     &lt;ul&gt;
     ...
@@ -219,7 +219,7 @@
         <p>add <code>has-arrow</code> class to <code>a</code> element</p>
       </blockquote>
       <pre><code class="language-html">&lt;ul class="metismenu" id="menu"&gt;
-  &lt;li class="active"&gt;
+  &lt;li class="mm-active"&gt;
     &lt;a class="has-arrow" href="#" aria-expanded="true"&gt;Menu 1&lt;/a&gt;
     &lt;ul&gt;
     ...
