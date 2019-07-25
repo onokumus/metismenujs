@@ -13,9 +13,11 @@ export const Default: IMMOptions = {
   triggerElement: "a"
 };
 
-export const ClassNames: IMMClassNames = {
-  activeClass: "active",
-  collapseClass: "collapse",
-  collapseInClass: "in",
-  collapsingClass: "collapsing"
+export const ClassName: IMMClassNames = {
+  ACTIVE: "mm-active",
+  COLLAPSE: "mm-collapse",
+  COLLAPSED: "mm-collapsed",
+  COLLAPSING: "mm-collapsing",
+  METIS: "metismenu",
+  SHOW: "mm-show"
 };
