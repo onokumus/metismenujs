@@ -139,10 +139,7 @@ class MetisMenu {
   }
 
   private show(ul) {
-    if (
-      this.isTransitioning ||
-      ul.classList.contains(ClassName.COLLAPSING)
-    ) {
+    if (this.isTransitioning || ul.classList.contains(ClassName.COLLAPSING)) {
       return;
     }
     const complete = () => {
@@ -190,10 +187,7 @@ class MetisMenu {
   }
 
   private hide(ul) {
-    if (
-      this.isTransitioning ||
-      !ul.classList.contains(ClassName.SHOW)
-    ) {
+    if (this.isTransitioning || !ul.classList.contains(ClassName.SHOW)) {
       return;
     }
     this.emit("hide.metisMenu", {
