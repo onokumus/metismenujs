@@ -1,5 +1,5 @@
 /*!
-* metismenujs - v1.0.3
+* metismenujs - v1.1.0
 * MetisMenu with Vanilla-JS
 * https://github.com/onokumus/metismenujs#readme
 *
@@ -9,8 +9,8 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    (global.MetisMenu = factory());
-}(this, (function () { 'use strict';
+    (global = global || self, global.MetisMenu = factory());
+}(this, function () { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -44,16 +44,18 @@
         toggle: true,
         triggerElement: "a"
     };
-    var ClassNames = {
-        activeClass: "active",
-        collapseClass: "collapse",
-        collapseInClass: "in",
-        collapsingClass: "collapsing"
+    var ClassName = {
+        ACTIVE: "mm-active",
+        COLLAPSE: "mm-collapse",
+        COLLAPSED: "mm-collapsed",
+        COLLAPSING: "mm-collapsing",
+        METIS: "metismenu",
+        SHOW: "mm-show"
     };
 
     var MetisMenu = /** @class */ (function () {
         /**
-         * Creates an instance of OnoffCanvas.
+         * Creates an instance of MetisMenu.
          *
          * @constructor
          * @param {HTMLElement | string} element
@@ -118,12 +120,13 @@
             return this;
         };
         MetisMenu.prototype.init = function () {
+            this.element.classList.add(ClassName.METIS);
             this.ulArr = [].slice.call(this.element.querySelectorAll(this.config.subMenu));
             for (var _i = 0, _a = this.ulArr; _i < _a.length; _i++) {
                 var ul = _a[_i];
                 var li = ul.parentNode;
-                ul.classList.add(ClassNames.collapseClass);
-                if (li.classList.contains(ClassNames.activeClass)) {
+                ul.classList.add(ClassName.COLLAPSE);
+                if (li.classList.contains(ClassName.ACTIVE)) {
                     this.show(ul);
                 }
                 else {
@@ -157,7 +160,7 @@
             }
         };
         MetisMenu.prototype.toggle = function (ul) {
-            if (ul.parentNode.classList.contains(ClassNames.activeClass)) {
+            if (ul.parentNode.classList.contains(ClassName.ACTIVE)) {
                 this.hide(ul);
             }
             else {
@@ -166,12 +169,11 @@
         };
         MetisMenu.prototype.show = function (ul) {
             var _this = this;
-            if (this.isTransitioning ||
-                ul.classList.contains(ClassNames.collapseInClass)) {
+            if (this.isTransitioning || ul.classList.contains(ClassName.COLLAPSING)) {
                 return;
             }
             var complete = function () {
-                ul.classList.remove(ClassNames.collapsingClass);
+                ul.classList.remove(ClassName.COLLAPSING);
                 ul.style.height = "";
                 ul.removeEventListener("transitionend", complete);
                 _this.setTransitioning(false);
@@ -180,13 +182,14 @@
                 });
             };
             var li = ul.parentNode;
-            li.classList.add(ClassNames.activeClass);
+            li.classList.add(ClassName.ACTIVE);
             var a = li.querySelector(this.config.triggerElement);
             a.setAttribute("aria-expanded", "true");
+            a.classList.remove(ClassName.COLLAPSED);
             ul.style.height = "0px";
-            ul.classList.remove(ClassNames.collapseClass);
-            ul.classList.remove(ClassNames.collapseInClass);
-            ul.classList.add(ClassNames.collapsingClass);
+            ul.classList.remove(ClassName.COLLAPSE);
+            ul.classList.remove(ClassName.SHOW);
+            ul.classList.add(ClassName.COLLAPSING);
             var eleParentSiblins = [].slice
                 .call(li.parentNode.children)
                 .filter(function (c) { return c !== li; });
@@ -200,8 +203,8 @@
                 }
             }
             this.setTransitioning(true);
-            ul.classList.add(ClassNames.collapseClass);
-            ul.classList.add(ClassNames.collapseInClass);
+            ul.classList.add(ClassName.COLLAPSE);
+            ul.classList.add(ClassName.SHOW);
             ul.style.height = ul.scrollHeight + "px";
             this.emit("show.metisMenu", {
                 showElement: ul
@@ -210,18 +213,18 @@
         };
         MetisMenu.prototype.hide = function (ul) {
             var _this = this;
-            if (this.isTransitioning ||
-                !ul.classList.contains(ClassNames.collapseInClass)) {
+            if (this.isTransitioning || !ul.classList.contains(ClassName.SHOW)) {
                 return;
             }
             this.emit("hide.metisMenu", {
                 hideElement: ul
             });
             var li = ul.parentNode;
-            li.classList.remove(ClassNames.activeClass);
+            li.classList.remove(ClassName.ACTIVE);
             var complete = function () {
-                ul.classList.remove(ClassNames.collapsingClass);
-                ul.classList.add(ClassNames.collapseClass);
+                ul.classList.remove(ClassName.COLLAPSING);
+                ul.classList.add(ClassName.COLLAPSE);
+                ul.style.height = "";
                 ul.removeEventListener("transitionend", complete);
                 _this.setTransitioning(false);
                 _this.emit("hidden.metisMenu", {
@@ -230,14 +233,15 @@
             };
             ul.style.height = ul.getBoundingClientRect().height + "px";
             ul.style.height = ul.offsetHeight + "px";
-            ul.classList.add(ClassNames.collapsingClass);
-            ul.classList.remove(ClassNames.collapseClass);
-            ul.classList.remove(ClassNames.collapseInClass);
+            ul.classList.add(ClassName.COLLAPSING);
+            ul.classList.remove(ClassName.COLLAPSE);
+            ul.classList.remove(ClassName.SHOW);
             this.setTransitioning(true);
             ul.addEventListener("transitionend", complete);
             ul.style.height = "0px";
             var a = li.querySelector(this.config.triggerElement);
             a.setAttribute("aria-expanded", "false");
+            a.classList.add(ClassName.COLLAPSED);
         };
         MetisMenu.prototype.setTransitioning = function (isTransitioning) {
             this.isTransitioning = isTransitioning;
@@ -247,5 +251,5 @@
 
     return MetisMenu;
 
-})));
+}));
 //# sourceMappingURL=metismenujs.js.map
