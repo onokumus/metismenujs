@@ -10,7 +10,7 @@ declare class MetisMenu {
     private cacheConfig;
     private listenerOb;
     /**
-     * Creates an instance of OnoffCanvas.
+     * Creates an instance of MetisMenu.
      *
      * @constructor
      * @param {HTMLElement | string} element

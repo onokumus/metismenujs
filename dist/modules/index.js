@@ -1,13 +1,11 @@
 /*!
-* metismenujs - v1.0.3
+* metismenujs - v1.1.0
 * MetisMenu with Vanilla-JS
 * https://github.com/onokumus/metismenujs#readme
 *
 * Made by Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
 * Under MIT License
 */
-import { ClassNames, Default } from './constant.js';
-
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -34,9 +32,24 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
+var Default = {
+    parentTrigger: "li",
+    subMenu: "ul",
+    toggle: true,
+    triggerElement: "a"
+};
+var ClassName = {
+    ACTIVE: "mm-active",
+    COLLAPSE: "mm-collapse",
+    COLLAPSED: "mm-collapsed",
+    COLLAPSING: "mm-collapsing",
+    METIS: "metismenu",
+    SHOW: "mm-show"
+};
+
 var MetisMenu = /** @class */ (function () {
     /**
-     * Creates an instance of OnoffCanvas.
+     * Creates an instance of MetisMenu.
      *
      * @constructor
      * @param {HTMLElement | string} element
@@ -101,12 +114,13 @@ var MetisMenu = /** @class */ (function () {
         return this;
     };
     MetisMenu.prototype.init = function () {
+        this.element.classList.add(ClassName.METIS);
         this.ulArr = [].slice.call(this.element.querySelectorAll(this.config.subMenu));
         for (var _i = 0, _a = this.ulArr; _i < _a.length; _i++) {
             var ul = _a[_i];
             var li = ul.parentNode;
-            ul.classList.add(ClassNames.collapseClass);
-            if (li.classList.contains(ClassNames.activeClass)) {
+            ul.classList.add(ClassName.COLLAPSE);
+            if (li.classList.contains(ClassName.ACTIVE)) {
                 this.show(ul);
             }
             else {
@@ -140,7 +154,7 @@ var MetisMenu = /** @class */ (function () {
         }
     };
     MetisMenu.prototype.toggle = function (ul) {
-        if (ul.parentNode.classList.contains(ClassNames.activeClass)) {
+        if (ul.parentNode.classList.contains(ClassName.ACTIVE)) {
             this.hide(ul);
         }
         else {
@@ -149,12 +163,11 @@ var MetisMenu = /** @class */ (function () {
     };
     MetisMenu.prototype.show = function (ul) {
         var _this = this;
-        if (this.isTransitioning ||
-            ul.classList.contains(ClassNames.collapseInClass)) {
+        if (this.isTransitioning || ul.classList.contains(ClassName.COLLAPSING)) {
             return;
         }
         var complete = function () {
-            ul.classList.remove(ClassNames.collapsingClass);
+            ul.classList.remove(ClassName.COLLAPSING);
             ul.style.height = "";
             ul.removeEventListener("transitionend", complete);
             _this.setTransitioning(false);
@@ -163,13 +176,14 @@ var MetisMenu = /** @class */ (function () {
             });
         };
         var li = ul.parentNode;
-        li.classList.add(ClassNames.activeClass);
+        li.classList.add(ClassName.ACTIVE);
         var a = li.querySelector(this.config.triggerElement);
         a.setAttribute("aria-expanded", "true");
+        a.classList.remove(ClassName.COLLAPSED);
         ul.style.height = "0px";
-        ul.classList.remove(ClassNames.collapseClass);
-        ul.classList.remove(ClassNames.collapseInClass);
-        ul.classList.add(ClassNames.collapsingClass);
+        ul.classList.remove(ClassName.COLLAPSE);
+        ul.classList.remove(ClassName.SHOW);
+        ul.classList.add(ClassName.COLLAPSING);
         var eleParentSiblins = [].slice
             .call(li.parentNode.children)
             .filter(function (c) { return c !== li; });
@@ -183,8 +197,8 @@ var MetisMenu = /** @class */ (function () {
             }
         }
         this.setTransitioning(true);
-        ul.classList.add(ClassNames.collapseClass);
-        ul.classList.add(ClassNames.collapseInClass);
+        ul.classList.add(ClassName.COLLAPSE);
+        ul.classList.add(ClassName.SHOW);
         ul.style.height = ul.scrollHeight + "px";
         this.emit("show.metisMenu", {
             showElement: ul
@@ -193,18 +207,18 @@ var MetisMenu = /** @class */ (function () {
     };
     MetisMenu.prototype.hide = function (ul) {
         var _this = this;
-        if (this.isTransitioning ||
-            !ul.classList.contains(ClassNames.collapseInClass)) {
+        if (this.isTransitioning || !ul.classList.contains(ClassName.SHOW)) {
             return;
         }
         this.emit("hide.metisMenu", {
             hideElement: ul
         });
         var li = ul.parentNode;
-        li.classList.remove(ClassNames.activeClass);
+        li.classList.remove(ClassName.ACTIVE);
         var complete = function () {
-            ul.classList.remove(ClassNames.collapsingClass);
-            ul.classList.add(ClassNames.collapseClass);
+            ul.classList.remove(ClassName.COLLAPSING);
+            ul.classList.add(ClassName.COLLAPSE);
+            ul.style.height = "";
             ul.removeEventListener("transitionend", complete);
             _this.setTransitioning(false);
             _this.emit("hidden.metisMenu", {
@@ -213,14 +227,15 @@ var MetisMenu = /** @class */ (function () {
         };
         ul.style.height = ul.getBoundingClientRect().height + "px";
         ul.style.height = ul.offsetHeight + "px";
-        ul.classList.add(ClassNames.collapsingClass);
-        ul.classList.remove(ClassNames.collapseClass);
-        ul.classList.remove(ClassNames.collapseInClass);
+        ul.classList.add(ClassName.COLLAPSING);
+        ul.classList.remove(ClassName.COLLAPSE);
+        ul.classList.remove(ClassName.SHOW);
         this.setTransitioning(true);
         ul.addEventListener("transitionend", complete);
         ul.style.height = "0px";
         var a = li.querySelector(this.config.triggerElement);
         a.setAttribute("aria-expanded", "false");
+        a.classList.add(ClassName.COLLAPSED);
     };
     MetisMenu.prototype.setTransitioning = function (isTransitioning) {
         this.isTransitioning = isTransitioning;

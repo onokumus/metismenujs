@@ -1,5 +1,5 @@
 /*!
-* metismenujs - v1.0.3
+* metismenujs - v1.1.0
 * A menu plugin
 * https://github.com/onokumus/metismenujs#readme
 *
@@ -16,38 +16,38 @@
 }
 
 /*
-   * Require Bootstrap 3.x
-   * https://github.com/twbs/bootstrap
-  */
+ * Require Bootstrap 3.x
+ * https://github.com/twbs/bootstrap
+*/
 .metismenu .glyphicon.arrow:before {
   content: "\e079";
 }
 
-.metismenu .active > a > .glyphicon.arrow:before {
+.metismenu .mm-active > a > .glyphicon.arrow:before {
   content: "\e114";
 }
 
 /*
-   * Require Font-Awesome
-   * http://fortawesome.github.io/Font-Awesome/
-  */
+ * Require Font-Awesome
+ * http://fortawesome.github.io/Font-Awesome/
+*/
 .metismenu .fa.arrow:before {
   content: "\f104";
 }
 
-.metismenu .active > a > .fa.arrow:before {
+.metismenu .mm-active > a > .fa.arrow:before {
   content: "\f107";
 }
 
 /*
-   * Require Ionicons
-   * http://ionicons.com/
-  */
+ * Require Ionicons
+ * http://ionicons.com/
+*/
 .metismenu .ion.arrow:before {
   content: "\f3d2";
 }
 
-.metismenu .active > a > .ion.arrow:before {
+.metismenu .mm-active > a > .ion.arrow:before {
   content: "\f3d0";
 }
 
@@ -63,7 +63,7 @@
   content: "\f067";
 }
 
-.metismenu .active > a > .fa.plus-times {
+.metismenu .mm-active > a > .fa.plus-times {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -80,24 +80,20 @@
   content: "\f067";
 }
 
-.metismenu .active > a > .fa.plus-minus:before {
+.metismenu .mm-active > a > .fa.plus-minus:before {
   content: "\f068";
 }
 
-.metismenu .collapse {
+.metismenu .mm-collapse:not(.mm-show) {
   display: none;
 }
 
-.metismenu .collapse.in {
-  display: block;
-}
-
-.metismenu .collapsing {
+.metismenu .mm-collapsing {
   position: relative;
   height: 0;
   overflow: hidden;
   transition-timing-function: ease;
-  transition-duration: .35s;
+  transition-duration: 0.35s;
   transition-property: height, visibility;
 }
 
@@ -107,9 +103,9 @@
 
 .metismenu .has-arrow::after {
   position: absolute;
-  content: '';
-  width: .5em;
-  height: .5em;
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
   border-width: 1px 0 0 1px;
   border-style: solid;
   border-color: initial;
@@ -119,7 +115,7 @@
   -webkit-transform-origin: top;
   transform-origin: top;
   top: 50%;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 *[dir="rtl"] .metismenu .has-arrow::after {
@@ -129,13 +125,13 @@
   transform: rotate(135deg) translate(0, -50%);
 }
 
-.metismenu .active > .has-arrow::after,
+.metismenu .mm-active > .has-arrow::after,
 .metismenu .has-arrow[aria-expanded="true"]::after {
   -webkit-transform: rotate(-135deg) translate(0, -50%);
   transform: rotate(-135deg) translate(0, -50%);
 }
 
-*[dir="rtl"] .metismenu .active > .has-arrow::after,
+*[dir="rtl"] .metismenu .mm-active > .has-arrow::after,
 *[dir="rtl"] .metismenu .has-arrow[aria-expanded="true"]::after {
   -webkit-transform: rotate(225deg) translate(0, -50%);
   transform: rotate(225deg) translate(0, -50%);

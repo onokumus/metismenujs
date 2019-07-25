@@ -5,8 +5,10 @@ export interface IMMOptions {
     subMenu?: string;
 }
 export interface IMMClassNames {
-    activeClass?: string;
-    collapseClass?: string;
-    collapseInClass?: string;
-    collapsingClass?: string;
+    METIS: string;
+    ACTIVE?: string;
+    SHOW?: string;
+    COLLAPSE?: string;
+    COLLAPSING?: string;
+    COLLAPSED?: string;
 }
