@@ -16,10 +16,7 @@ const production = !process.env.ROLLUP_WATCH;
 
 export default [
   {
-    input: [
-      'src/constant.ts',
-      'src/index.ts',
-    ],
+    input: 'src/index.ts',
     output: [
       {
         dir: 'dist/cjs',
@@ -40,7 +37,6 @@ export default [
       resolve(),
       commonjs(),
     ],
-    experimentalCodeSplitting: true
   },
   {
     input: 'src/index.ts',
