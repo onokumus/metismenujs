@@ -60,7 +60,7 @@ var MetisMenu = /** @class */ (function () {
         this.element =
             typeof element === "string" ? document.querySelector(element) : element;
         this.cacheEl = this.element;
-        this.config = __assign({}, Default, options);
+        this.config = __assign(__assign({}, Default), options);
         this.cacheConfig = this.config;
         this.disposed = false;
         this.ulArr = [];
