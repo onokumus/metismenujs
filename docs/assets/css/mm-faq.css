@@ -5,7 +5,7 @@
   color: #adb5bd
 }
 
-.faq-item.active>.faq-link {
+.faq-item.mm-active>.faq-link {
   background-color: #d9480f;
   color: #f8f9fa;
 }

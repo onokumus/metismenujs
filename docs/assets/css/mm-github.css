@@ -81,7 +81,7 @@
   top: -14px;
   border-bottom-color: #fff;
 }
-.mm-github ul.collapsing {
+.mm-github ul.mm-collapsing {
   position: absolute;
 }
 .mm-github ul > li:first-child {

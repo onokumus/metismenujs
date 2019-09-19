@@ -26,7 +26,7 @@
   text-decoration: none;
 }
 
-.mm-tab > li.active > a {
+.mm-tab > li.mm-active > a {
   background: #fff;
   color: #fd7e14;
 }
@@ -35,7 +35,7 @@
   .mm-tab > li {
     display: inline-block;
   }
-  .mm-tab > li.active > a {
+  .mm-tab > li.mm-active > a {
     border: 1px solid #ddd;
     border-bottom-width: 0px;
     background: #fff;
