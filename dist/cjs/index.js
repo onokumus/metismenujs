@@ -1,5 +1,5 @@
 /*!
-* metismenujs - v1.1.0
+* metismenujs - v1.2.0
 * MetisMenu with Vanilla-JS
 * https://github.com/onokumus/metismenujs#readme
 *
@@ -35,212 +35,221 @@ var __assign = function() {
 };
 
 var Default = {
-    parentTrigger: "li",
-    subMenu: "ul",
+    parentTrigger: 'li',
+    subMenu: 'ul',
     toggle: true,
-    triggerElement: "a"
+    triggerElement: 'a',
 };
 var ClassName = {
-    ACTIVE: "mm-active",
-    COLLAPSE: "mm-collapse",
-    COLLAPSED: "mm-collapsed",
-    COLLAPSING: "mm-collapsing",
-    METIS: "metismenu",
-    SHOW: "mm-show"
+    ACTIVE: 'mm-active',
+    COLLAPSE: 'mm-collapse',
+    COLLAPSED: 'mm-collapsed',
+    COLLAPSING: 'mm-collapsing',
+    METIS: 'metismenu',
+    SHOW: 'mm-show',
 };
+
+function matches(element, selector) {
+    var nativeMatches = element.matches
+        || element.webkitMatchesSelector
+        || element.msMatchesSelector;
+    return nativeMatches.call(element, selector);
+}
+function closest(element, selector) {
+    if (element.closest) {
+        return element.closest(selector);
+    }
+    var el = element;
+    while (el) {
+        if (matches(el, selector)) {
+            return el;
+        }
+        el = el.parentElement;
+    }
+    return null;
+}
 
 var MetisMenu = /** @class */ (function () {
     /**
      * Creates an instance of MetisMenu.
      *
      * @constructor
-     * @param {HTMLElement | string} element
+     * @param {Element | string} element
      * @param {IMMOptions} [options]
      * @memberof MetisMenu
      */
     function MetisMenu(element, options) {
-        this.element =
-            typeof element === "string" ? document.querySelector(element) : element;
-        this.cacheEl = this.element;
+        this.element = MetisMenu.isElement(element) ? element : document.querySelector(element);
         this.config = __assign(__assign({}, Default), options);
-        this.cacheConfig = this.config;
         this.disposed = false;
-        this.ulArr = [];
-        this.listenerOb = [];
+        this.triggerArr = [];
         this.init();
     }
+    MetisMenu.attach = function (el, opt) {
+        return new MetisMenu(el, opt);
+    };
+    MetisMenu.prototype.init = function () {
+        var _this = this;
+        var METIS = ClassName.METIS, ACTIVE = ClassName.ACTIVE, COLLAPSE = ClassName.COLLAPSE;
+        this.element.classList.add(METIS);
+        [].slice.call(this.element.querySelectorAll(this.config.subMenu)).forEach(function (ul) {
+            ul.classList.add(COLLAPSE);
+            var li = closest(ul, _this.config.parentTrigger);
+            if (li === null || li === void 0 ? void 0 : li.classList.contains(ACTIVE)) {
+                _this.show(ul);
+            }
+            else {
+                _this.hide(ul);
+            }
+            var a = li === null || li === void 0 ? void 0 : li.querySelector(_this.config.triggerElement);
+            if ((a === null || a === void 0 ? void 0 : a.getAttribute('aria-disabled')) === 'true') {
+                return;
+            }
+            a === null || a === void 0 ? void 0 : a.setAttribute('aria-expanded', 'false');
+            a === null || a === void 0 ? void 0 : a.addEventListener('click', _this.clickEvent.bind(_this));
+            _this.triggerArr.push(a);
+        });
+    };
+    MetisMenu.prototype.clickEvent = function (evt) {
+        if (!this.disposed) {
+            var target = evt === null || evt === void 0 ? void 0 : evt.currentTarget;
+            if (target && target.tagName === 'A') {
+                evt.preventDefault();
+            }
+            var li = closest(target, this.config.parentTrigger);
+            var ul = li === null || li === void 0 ? void 0 : li.querySelector(this.config.subMenu);
+            this.toggle(ul);
+        }
+    };
     MetisMenu.prototype.update = function () {
         this.disposed = false;
-        this.element = this.cacheEl;
-        this.config = this.cacheConfig;
         this.init();
     };
     MetisMenu.prototype.dispose = function () {
-        for (var _i = 0, _a = this.listenerOb; _i < _a.length; _i++) {
-            var lo = _a[_i];
-            for (var key in lo) {
-                if (lo.hasOwnProperty(key)) {
-                    var el = lo[key];
-                    el[1].removeEventListener(el[0], el[2]);
-                }
-            }
-        }
-        this.ulArr = [];
-        this.listenerOb = [];
-        this.config = null;
-        this.element = null;
+        var _this = this;
+        this.triggerArr.forEach(function (arr) {
+            arr.removeEventListener('click', _this.clickEvent.bind(_this));
+        });
         this.disposed = true;
     };
-    MetisMenu.prototype.on = function (event, fn) {
-        this.element.addEventListener(event, fn, false);
+    MetisMenu.prototype.on = function (evtType, handler, options) {
+        this.element.addEventListener(evtType, handler, options);
         return this;
     };
-    MetisMenu.prototype.off = function (event, fn) {
-        this.element.removeEventListener(event, fn);
+    MetisMenu.prototype.off = function (evtType, handler, options) {
+        this.element.removeEventListener(evtType, handler, options);
         return this;
     };
-    MetisMenu.prototype.emit = function (event, eventDetail, shouldBubble) {
+    MetisMenu.prototype.emit = function (evtType, evtData, shouldBubble) {
         if (shouldBubble === void 0) { shouldBubble = false; }
         var evt;
-        if (typeof CustomEvent === "function") {
-            evt = new CustomEvent(event, {
+        if (typeof CustomEvent === 'function') {
+            evt = new CustomEvent(evtType, {
                 bubbles: shouldBubble,
-                detail: eventDetail
+                detail: evtData,
             });
         }
         else {
-            evt = document.createEvent("CustomEvent");
-            evt.initCustomEvent(event, shouldBubble, false, eventDetail);
+            evt = document.createEvent('CustomEvent');
+            evt.initCustomEvent(evtType, shouldBubble, false, evtData);
         }
         this.element.dispatchEvent(evt);
         return this;
     };
-    MetisMenu.prototype.init = function () {
-        this.element.classList.add(ClassName.METIS);
-        this.ulArr = [].slice.call(this.element.querySelectorAll(this.config.subMenu));
-        for (var _i = 0, _a = this.ulArr; _i < _a.length; _i++) {
-            var ul = _a[_i];
-            var li = ul.parentNode;
-            ul.classList.add(ClassName.COLLAPSE);
-            if (li.classList.contains(ClassName.ACTIVE)) {
-                this.show(ul);
-            }
-            else {
-                this.hide(ul);
-            }
-            var a = li.querySelector(this.config.triggerElement);
-            if (a.getAttribute("aria-disabled") === "true") {
-                return;
-            }
-            a.setAttribute("aria-expanded", "false");
-            var listenerOb = {
-                aClick: ["click", a, this.clickEvent.bind(this)]
-            };
-            for (var key in listenerOb) {
-                if (listenerOb.hasOwnProperty(key)) {
-                    var listener = listenerOb[key];
-                    listener[1].addEventListener(listener[0], listener[2]);
-                }
-            }
-            this.listenerOb.push(listenerOb);
-        }
-    };
-    MetisMenu.prototype.clickEvent = function (ev) {
-        if (!this.disposed) {
-            if (ev.currentTarget.tagName === "A") {
-                ev.preventDefault();
-            }
-            var li = ev.currentTarget.parentNode;
-            var ul = li.querySelector(this.config.subMenu);
-            this.toggle(ul);
-        }
-    };
     MetisMenu.prototype.toggle = function (ul) {
-        if (ul.parentNode.classList.contains(ClassName.ACTIVE)) {
+        var li = closest(ul, this.config.parentTrigger);
+        if (li === null || li === void 0 ? void 0 : li.classList.contains(ClassName.ACTIVE)) {
             this.hide(ul);
         }
         else {
             this.show(ul);
         }
     };
-    MetisMenu.prototype.show = function (ul) {
+    MetisMenu.prototype.show = function (el) {
         var _this = this;
-        if (this.isTransitioning || ul.classList.contains(ClassName.COLLAPSING)) {
+        var _a;
+        var ul = el;
+        var ACTIVE = ClassName.ACTIVE, COLLAPSE = ClassName.COLLAPSE, COLLAPSED = ClassName.COLLAPSED, COLLAPSING = ClassName.COLLAPSING, SHOW = ClassName.SHOW;
+        if (this.isTransitioning || ul.classList.contains(COLLAPSING)) {
             return;
         }
         var complete = function () {
-            ul.classList.remove(ClassName.COLLAPSING);
-            ul.style.height = "";
-            ul.removeEventListener("transitionend", complete);
+            ul.classList.remove(COLLAPSING);
+            ul.style.height = '';
+            ul.removeEventListener('transitionend', complete);
             _this.setTransitioning(false);
-            _this.emit("shown.metisMenu", {
-                shownElement: ul
+            _this.emit('shown.metisMenu', {
+                shownElement: ul,
             });
         };
-        var li = ul.parentNode;
-        li.classList.add(ClassName.ACTIVE);
-        var a = li.querySelector(this.config.triggerElement);
-        a.setAttribute("aria-expanded", "true");
-        a.classList.remove(ClassName.COLLAPSED);
-        ul.style.height = "0px";
-        ul.classList.remove(ClassName.COLLAPSE);
-        ul.classList.remove(ClassName.SHOW);
-        ul.classList.add(ClassName.COLLAPSING);
+        var li = closest(ul, this.config.parentTrigger);
+        li === null || li === void 0 ? void 0 : li.classList.add(ACTIVE);
+        var a = li === null || li === void 0 ? void 0 : li.querySelector(this.config.triggerElement);
+        a === null || a === void 0 ? void 0 : a.setAttribute('aria-expanded', 'true');
+        a === null || a === void 0 ? void 0 : a.classList.remove(COLLAPSED);
+        ul.style.height = '0px';
+        ul.classList.remove(COLLAPSE);
+        ul.classList.remove(SHOW);
+        ul.classList.add(COLLAPSING);
         var eleParentSiblins = [].slice
-            .call(li.parentNode.children)
+            .call((_a = li === null || li === void 0 ? void 0 : li.parentNode) === null || _a === void 0 ? void 0 : _a.children)
             .filter(function (c) { return c !== li; });
         if (this.config.toggle && eleParentSiblins.length > 0) {
-            for (var _i = 0, eleParentSiblins_1 = eleParentSiblins; _i < eleParentSiblins_1.length; _i++) {
-                var sibli = eleParentSiblins_1[_i];
-                var sibUl = sibli.querySelector(this.config.subMenu);
-                if (sibUl !== null) {
-                    this.hide(sibUl);
+            eleParentSiblins.forEach(function (sibli) {
+                var sibUl = sibli.querySelector(_this.config.subMenu);
+                if (sibUl) {
+                    _this.hide(sibUl);
                 }
-            }
+            });
         }
         this.setTransitioning(true);
-        ul.classList.add(ClassName.COLLAPSE);
-        ul.classList.add(ClassName.SHOW);
+        ul.classList.add(COLLAPSE);
+        ul.classList.add(SHOW);
         ul.style.height = ul.scrollHeight + "px";
-        this.emit("show.metisMenu", {
-            showElement: ul
+        this.emit('show.metisMenu', {
+            showElement: ul,
         });
-        ul.addEventListener("transitionend", complete);
+        ul.addEventListener('transitionend', complete);
     };
-    MetisMenu.prototype.hide = function (ul) {
+    MetisMenu.prototype.hide = function (el) {
         var _this = this;
-        if (this.isTransitioning || !ul.classList.contains(ClassName.SHOW)) {
+        var ACTIVE = ClassName.ACTIVE, COLLAPSE = ClassName.COLLAPSE, COLLAPSED = ClassName.COLLAPSED, COLLAPSING = ClassName.COLLAPSING, SHOW = ClassName.SHOW;
+        var ul = el;
+        if (this.isTransitioning || !ul.classList.contains(SHOW)) {
             return;
         }
-        this.emit("hide.metisMenu", {
-            hideElement: ul
+        this.emit('hide.metisMenu', {
+            hideElement: ul,
         });
-        var li = ul.parentNode;
-        li.classList.remove(ClassName.ACTIVE);
+        var li = closest(ul, this.config.parentTrigger);
+        li === null || li === void 0 ? void 0 : li.classList.remove(ACTIVE);
         var complete = function () {
-            ul.classList.remove(ClassName.COLLAPSING);
-            ul.classList.add(ClassName.COLLAPSE);
-            ul.style.height = "";
-            ul.removeEventListener("transitionend", complete);
+            ul.classList.remove(COLLAPSING);
+            ul.classList.add(COLLAPSE);
+            ul.style.height = '';
+            ul.removeEventListener('transitionend', complete);
             _this.setTransitioning(false);
-            _this.emit("hidden.metisMenu", {
-                hiddenElement: ul
+            _this.emit('hidden.metisMenu', {
+                hiddenElement: ul,
             });
         };
         ul.style.height = ul.getBoundingClientRect().height + "px";
         ul.style.height = ul.offsetHeight + "px";
-        ul.classList.add(ClassName.COLLAPSING);
-        ul.classList.remove(ClassName.COLLAPSE);
-        ul.classList.remove(ClassName.SHOW);
+        ul.classList.add(COLLAPSING);
+        ul.classList.remove(COLLAPSE);
+        ul.classList.remove(SHOW);
         this.setTransitioning(true);
-        ul.addEventListener("transitionend", complete);
-        ul.style.height = "0px";
-        var a = li.querySelector(this.config.triggerElement);
-        a.setAttribute("aria-expanded", "false");
-        a.classList.add(ClassName.COLLAPSED);
+        ul.addEventListener('transitionend', complete);
+        ul.style.height = '0px';
+        var a = li === null || li === void 0 ? void 0 : li.querySelector(this.config.triggerElement);
+        a === null || a === void 0 ? void 0 : a.setAttribute('aria-expanded', 'false');
+        a === null || a === void 0 ? void 0 : a.classList.add(COLLAPSED);
     };
     MetisMenu.prototype.setTransitioning = function (isTransitioning) {
         this.isTransitioning = isTransitioning;
+    };
+    MetisMenu.isElement = function (element) {
+        return Boolean(element.classList);
     };
     return MetisMenu;
 }());

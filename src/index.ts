@@ -64,12 +64,12 @@ class MetisMenu {
 
   private clickEvent(evt?: Event) {
     if (!this.disposed) {
-      const target = evt?.target as Element | null;
+      const target = evt?.currentTarget as Element | null;
       if (target && target.tagName === 'A') {
         evt!.preventDefault();
       }
 
-      const li = target?.parentNode;
+      const li = closest(target!, this.config.parentTrigger!);
       const ul = li?.querySelector(this.config.subMenu!);
       this.toggle(ul!);
     }
@@ -77,6 +77,7 @@ class MetisMenu {
 
   update() {
     this.disposed = false;
+    this.init();
   }
 
   dispose() {
@@ -116,16 +117,15 @@ class MetisMenu {
       evt.initCustomEvent(evtType, shouldBubble, false, evtData);
     }
     this.element.dispatchEvent(evt);
+    return this;
   }
 
   toggle(ul: Element) {
     const li = closest(ul, this.config.parentTrigger!);
-    if (MetisMenu.isElement(li)) {
-      if (li.classList.contains(ClassName.ACTIVE!)) {
-        this.hide(ul);
-      } else {
-        this.show(ul);
-      }
+    if (li?.classList.contains(ClassName.ACTIVE)) {
+      this.hide(ul);
+    } else {
+      this.show(ul);
     }
   }
 

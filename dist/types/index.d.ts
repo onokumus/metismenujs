@@ -1,33 +1,34 @@
-import { MetisMenuEvents } from "./constant";
-import { IMMOptions } from "./interface";
+import { IMMOptions } from './interface';
+import { EventType, SpecificEventListener, CustomEventListener } from './types';
 declare class MetisMenu {
-    config: IMMOptions;
-    element: HTMLElement;
-    private isTransitioning;
-    private disposed;
-    private ulArr;
-    private cacheEl;
-    private cacheConfig;
-    private listenerOb;
+    protected config: IMMOptions;
+    protected element: Element;
+    protected isTransitioning: boolean;
+    protected disposed: boolean;
+    protected triggerArr: Array<Element>;
     /**
      * Creates an instance of MetisMenu.
      *
      * @constructor
-     * @param {HTMLElement | string} element
+     * @param {Element | string} element
      * @param {IMMOptions} [options]
      * @memberof MetisMenu
      */
-    constructor(element: HTMLElement | string, options?: IMMOptions);
-    update(): void;
-    dispose(): void;
-    on(event: MetisMenuEvents, fn: EventListenerOrEventListenerObject): this;
-    off(event: MetisMenuEvents, fn: EventListenerOrEventListenerObject): this;
-    private emit;
+    constructor(element: Element | string, options?: IMMOptions);
+    static attach(el: Element, opt?: IMMOptions): MetisMenu;
     private init;
     private clickEvent;
-    private toggle;
-    private show;
-    private hide;
+    update(): void;
+    dispose(): void;
+    on<K extends EventType>(evtType: K, handler: SpecificEventListener<K>, options?: AddEventListenerOptions | boolean): MetisMenu;
+    on<E extends Event>(evtType: E, handler: CustomEventListener<E>, options?: AddEventListenerOptions | boolean): MetisMenu;
+    off<K extends EventType>(evtType: K, handler: SpecificEventListener<K>, options?: AddEventListenerOptions | boolean): MetisMenu;
+    off<E extends Event>(evtType: E, handler: CustomEventListener<E>, options?: AddEventListenerOptions | boolean): MetisMenu;
+    emit<T extends object>(evtType: string, evtData: T, shouldBubble?: boolean): this;
+    toggle(ul: Element): void;
+    show(el: Element): void;
+    hide(el: Element): void;
     private setTransitioning;
+    static isElement(element: unknown): element is Element;
 }
 export default MetisMenu;
