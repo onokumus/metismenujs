@@ -19,6 +19,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "minify": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/metismenujs.js.map,includeSources,url=metismenujs.min.js.map\" --output dist/metismenujs.min.js dist/metismenujs.js",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
     "tsc": "tsc --emitDeclarationOnly"
   },
   "engines": {
@@ -39,6 +40,7 @@
   },
   "homepage": "https://github.com/onokumus/metismenujs#readme",
   "devDependencies": {
+    "eslint": "^6.8.0",
     "node-sass": "^4.12.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
