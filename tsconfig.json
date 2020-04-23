@@ -3,9 +3,6 @@
     "target": "es5",
     "module": "esnext",
     "lib": ["dom", "esnext"],
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "outDir": "dist/modules",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "strict": true
