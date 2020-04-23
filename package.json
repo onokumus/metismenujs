@@ -56,34 +56,5 @@
     "tslib": "^1.10.0",
     "typescript": "^3.5.3",
     "uglify-js": "^3.6.0"
-  },
-  "verb": {
-    "toc": {
-      "collapsible": false,
-      "method": "preWrite"
-    },
-    "tasks": [
-      "readme"
-    ],
-    "plugins": [
-      "gulp-format-md"
-    ],
-    "helpers": [
-      "helper-changelog"
-    ],
-    "related": {
-      "list": [
-        "chl",
-        "metismenu",
-        "onoffcanvas",
-        "twbuttons"
-      ]
-    },
-    "reflinks": [
-      "chl",
-      "metismenu",
-      "onoffcanvas",
-      "twbuttons"
-    ]
   }
 }
