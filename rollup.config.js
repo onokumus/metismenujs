@@ -26,11 +26,6 @@ export default [
         format: "cjs"
       },
       {
-        dir: "dist/modules",
-        banner,
-        format: "es"
-      },
-      {
         name: "MetisMenu",
         file: production ? pkg.browser : 'docs/assets/js/metismenujs.js',
         banner,
