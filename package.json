@@ -19,7 +19,6 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "minify": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/metismenujs.js.map,includeSources,url=metismenujs.min.js.map\" --output dist/metismenujs.min.js dist/metismenujs.js",
-    "lint": "tslint -c tslint.json src/**/*.ts",
     "tsc": "tsc --emitDeclarationOnly"
   },
   "engines": {
@@ -49,9 +48,6 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-typescript": "^1.0.1",
     "tslib": "^1.10.0",
-    "tslint": "^5.18.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.3",
     "uglify-js": "^3.6.0"
   },
