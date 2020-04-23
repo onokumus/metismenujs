@@ -1,5 +1,6 @@
 .left-aside {
   width: 256px;
+  overflow-y: auto;
 }
 .left-aside ul {
   margin: 0;
