@@ -1,10 +1,7 @@
 # metismenujs [![NPM version](https://img.shields.io/npm/v/metismenujs.svg?style=flat)](https://www.npmjs.com/package/metismenujs) [![NPM monthly downloads](https://img.shields.io/npm/dm/metismenujs.svg?style=flat)](https://npmjs.org/package/metismenujs) [![NPM total downloads](https://img.shields.io/npm/dt/metismenujs.svg?style=flat)](https://npmjs.org/package/metismenujs)  
 [![](https://data.jsdelivr.com/v1/package/npm/metismenujs/badge)](https://www.jsdelivr.com/package/npm/metismenujs) [![Packagist](https://img.shields.io/packagist/v/onokumus/metismenujs.svg)](https://packagist.org/packages/onokumus/metismenujs)
 
-> MetisMenu with Vanilla-JS
-
-### MetisMenu with JQuery
-If you want to try MetisMenu with jQuery, see [MetisMenu](https://github.com/onokumus/metismenu) repository.
+> MetisMenu: Collapsible menu plugin with Vanilla-JS
 
 Please consider following this project's author, [Osman Nuri Okumus](https://github.com/onokumus), and consider starring the project to show your :heart: and support.
 
@@ -239,10 +236,8 @@ Contains a simple HTML file to demonstrate metisMenu plugin.
 ## About
 
 ### Related projects
-- [chaldene](https://www.npmjs.com/package/chl): flexbox admin layout | [homepage](https://github.com/onokumus/chaldene "flexbox admin layout")
 - [metismenu](https://www.npmjs.com/package/metismenu): A jQuery menu plugin | [homepage](https://github.com/onokumus/metismenu#readme "A jQuery menu plugin")
-- [onoffcanvas](https://www.npmjs.com/package/onoffcanvas): An offcanvas plugin | [homepage](https://github.com/onokumus/onoffcanvas "An offcanvas plugin")
-- [twbuttons](https://www.npmjs.com/package/twbuttons): alexwolfe/Buttons for Twitter Bootstrap 3 | [homepage](https://github.com/onokumus/twbuttons "alexwolfe/Buttons for Twitter Bootstrap 3")
+- [@metismenu/react](https://www.npmjs.com/package/@metismenu/react): react.js component for metismenu | [homepage](https://github.com/onokumus/metismenu-react#readme "react.js component for metismenu")
 
 ### Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
@@ -256,9 +251,3 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 ### License
 Copyright © 2020, [Osman Nuri Okumus](https://github.com/onokumus).
 Released under the [MIT License](LICENSE).
-
-[chaldene]: https://github.com/onokumus/chaldene
-[metismenu]: https://github.com/onokumus/metismenu
-[onoffcanvas]: https://github.com/onokumus/onoffcanvas
-[twbuttons]: https://github.com/onokumus/twbuttons
-
