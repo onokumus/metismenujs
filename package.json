@@ -1,7 +1,7 @@
 {
   "name": "metismenujs",
   "version": "1.2.0",
-  "description": "MetisMenu with Vanilla-JS",
+  "description": "MetisMenu: Collapsible menu plugin with Vanilla-JS",
   "main": "dist/cjs/index.js",
   "module": "dist/modules/index.js",
   "browser": "dist/metismenujs.js",
