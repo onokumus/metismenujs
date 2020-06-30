@@ -24,7 +24,22 @@ export default [
         dir: "dist/cjs",
         banner,
         format: "cjs"
-      },
+      }
+    ],
+    plugins: [
+      typescript({
+        typescript: require("typescript")
+      }),
+      resolve(),
+      commonjs()
+    ],
+    external: [
+      "tslib"
+    ]
+  },
+  {
+    input: "src/index.ts",
+    output: [
       {
         name: "MetisMenu",
         file: production ? pkg.browser : 'docs/assets/js/metismenujs.js',
@@ -35,8 +50,7 @@ export default [
     ],
     plugins: [
       typescript({
-        typescript: require("typescript"),
-        target: "es5"
+        typescript: require("typescript")
       }),
       resolve(),
       commonjs()

@@ -5,7 +5,8 @@
     "lib": ["dom", "esnext"],
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "strict": true
+    "strict": true,
+    "importHelpers": true
   },
   "include": ["src/**/*.ts"]
 }
