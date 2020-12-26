@@ -23,7 +23,8 @@ export default [
       {
         dir: "dist/cjs",
         banner,
-        format: "cjs"
+        format: "cjs",
+        exports: 'auto'
       }
     ],
     plugins: [
