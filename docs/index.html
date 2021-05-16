@@ -15,26 +15,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/noty/lib/themes/relax.css">
 
   <link rel="stylesheet" href="assets/css/app.css">
+<link rel="stylesheet" href="assets/css/mm-vertical.css">
 </head>
 
 <body>
   <header>
-    <div class="navbar navbar-expand-md navbar-dark bg-dark box-shadow">
-      <div class="container d-flex justify-content-between">
-        <a href="index.html" class="navbar-brand d-flex align-items-center">
-          <strong>MetisMenu<span class="text-warning">JS</span></strong>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          MetisMenu<span class="text-warning">JS</span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-          aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-          <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Examples</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Examples
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="mm-vertical.html">Vertical Menu</a>
                 <a class="dropdown-item" href="mm-horizontal.html">Horizontal Menu</a>
                 <a class="dropdown-item" href="mm-folder.html">Folder View</a>
@@ -51,16 +52,25 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Templates</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown02">
-                <a class="dropdown-item" href="http://chl.onokumus.com" target="_blank">Chaldene Admin</a>
-                <a class="dropdown-item" href="http://elk.onokumus.com" target="_blank">Elektron Admin</a>
-                <a class="dropdown-item" href="http://onokumus.github.io/twbuttons/" target="_blank">twbuttons</a>
-              </div>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Templates
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="https://onokumus.com/chaldene" target="_blank">Chaldene Admin</a>
+                </li>
+                <li>
+
+                  <a class="dropdown-item" href="https://onokumus.com/elektron" target="_blank">Elektron Admin</a>
+                </li>
+                <li>
+
+                  <a class="dropdown-item" href="https://onokumus.com/twbuttons/" target="_blank">twbuttons</a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://onokumus.com" target="_blank">onokumus</a>
+              <a class="nav-link" href="https://onokumus.com" target="_blank">onokumus</a>
             </li>
           </ul>
         </div>
@@ -106,20 +116,22 @@
 
       </section>
       <h2>Table of Contents</h2>
-
-      <ul>
-        <li><a href="#getting-started">Getting started</a>
+<div class="row">
+  <div class="col-md-3 mb-3">
+    <nav class="sidebar-nav border">
+      <ul id="toc">
+        <li><a href="#getting-started" class="has-arrow">Getting started</a>
           <ul>
             <li><a href="#install">Install</a></li>
             <li><a href="#download">Download</a></li>
           </ul>
         </li>
-        <li><a href="#usage">Usage</a>
+        <li><a href="#usage" class="has-arrow">Usage</a>
           <ul>
             <li><a href="#stopping-list-opening-on-certain-elements">Stopping list opening on certain elements</a></li>
           </ul>
         </li>
-        <li><a href="#options">Options</a>
+        <li><a href="#options" class="has-arrow">Options</a>
           <ul>
             <li><a href="#toggle">toggle</a></li>
             <li><a href="#triggerelement">triggerElement</a></li>
@@ -127,32 +139,51 @@
             <li><a href="#submenu">subMenu</a></li>
           </ul>
         </li>
-        <li><a href="#api">API</a>
+        <li><a href="#api" class="has-arrow">API</a>
           <ul>
             <li><a href="#dispose">dispose</a></li>
             <li><a href="#update">update</a></li>
           </ul>
         </li>
         <li><a href="#events">Events</a></li>
-        <li><a href="#migrating-to-v103-from-v110">Migrating to v1.0.3 from v1.2.0</a></li>
-        <li><a href="#demo">Demo</a></li>
-        <li><a href="#about">About</a>
+        <li><a href="#about" class="has-arrow">About</a>
           <ul>
-            <li><a href="#related-projects">Related projects</a></li>
-            <li><a href="#contributing">Contributing</a></li>
             <li><a href="#author">Author</a></li>
             <li><a href="#license">License</a></li>
           </ul>
         </li>
       </ul>
-      <h2 id="getting-started">Getting started</h2>
-      <h3 id="install">Install</h3>
-      <p>Install with <a href="https://www.npmjs.com/">npm</a>:</p>
-      <pre><code class="language-sh">$ npm install metismenujs</code></pre>
-      <p>Install with <a href="https://yarnpkg.com">yarn</a>:</p>
-      <pre><code class="language-bash">$ yarn add metismenujs</code></pre>
-      <p>Add project file to metismenu</p>
-      <pre><code class="language-js">import MetisMenu from &#39;metismenujs&#39;;
+    </nav>
+  </div>
+
+  <div class="col-md-9 mb-3">
+    <div class="col-md-9 mb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+          <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+          </symbol>
+          <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </symbol>
+          <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </symbol>
+        </svg>
+
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+          <div>
+            This version does not support any version of IE browser.
+          </div>
+        </div>
+    <h2 id="getting-started">Getting started</h2>
+    <h3 id="install">Install</h3>
+    <p>Install with <a href="https://www.npmjs.com/">npm</a>:</p>
+    <pre><code class="language-sh">npm install metismenujs</code></pre>
+    <p>Install with <a href="https://yarnpkg.com">yarn</a>:</p>
+    <pre><code class="language-bash">yarn add metismenujs</code></pre>
+    <p>Add project file to metismenu</p>
+    <pre><code class="language-js">import MetisMenu from &#39;metismenujs&#39;;
 
 // or
 const MetisMenu = require(&#39;metismenujs&#39;);
@@ -162,159 +193,175 @@ const mm = new MetisMenu(&#39;#menu&#39;, {...});
 
 // or call MetisMenu static attach method
 const mm = MetisMenu.attach(&#39;#menu&#39;, {...})</code></pre>
-      <p>Install with <a href="https://getcomposer.org/">composer</a></p>
-      <pre><code class="language-sh">$ composer require onokumus/metismenujs:dev-master</code></pre>
-      <h3 id="download">Download</h3>
-      <p><a href="https://github.com/onokumus/metismenujs/archive/master.zip">download</a></p>
-      <h2 id="usage">Usage</h2>
-      <ol>
-        <li>
-          <p>Include metismenujs StyleSheet</p>
-          <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/metismenujs/dist/metismenujs.min.css&quot;&gt;
-&lt;!-- OR --&gt;  
+    <p>Install with <a href="https://getcomposer.org/">composer</a></p>
+    <pre><code class="language-sh">composer require onokumus/metismenujs:dev-master</code></pre>
+    <h3 id="download">Download</h3>
+    <p><a href="https://github.com/onokumus/metismenujs/archive/master.zip">download</a></p>
+    <h2 id="usage">Usage</h2>
+    <ol>
+      <li>
+        <p>Include metismenujs StyleSheet</p>
+        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/metismenujs/dist/metismenujs.min.css&quot;&gt;
+&lt;!-- OR --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.css&quot;&gt;</code></pre>
-        </li>
-        <li>
-          <p>Include metismenujs plugin&#39;s code</p>
-          <pre><code class="language-html">&lt;script src=&quot;https://unpkg.com/metismenujs/dist/metismenujs.min.js&quot;&gt;&lt;/script&gt;
+      </li>
+      <li>
+        <p>Include metismenujs plugin&#39;s code</p>
+        <pre><code class="language-html">&lt;script src=&quot;https://unpkg.com/metismenujs/dist/metismenujs.min.js&quot;&gt;&lt;/script&gt;
 &lt;!-- OR --&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-        </li>
-        <li>
-          <p>Add class <code>metismenu</code> to unordered list</p>
-          <pre><code class="language-html">&lt;ul class=&quot;metismenu&quot; id=&quot;menu&quot;&gt;
-        
+      </li>
+      <li>
+        <p>Add class <code>metismenu</code> to unordered list</p>
+        <pre><code class="language-html">&lt;ul class=&quot;metismenu&quot; id=&quot;menu&quot;&gt;
+
 &lt;/ul&gt;</code></pre>
-        </li>
-        <li>
-          <p>Make expand/collapse controls accessible</p>
-          <blockquote>
-            <p>Be sure to add <code>aria-expanded</code> to the element <code>a</code>. This attribute explicitly
-              defines the current state of the collapsible element to screen readers and similar assistive technologies.
-              If the collapsible element is closed by default, it should have a value of
-              <code>aria-expanded=&quot;false&quot;</code>. If you&#39;ve set the collapsible element&#39;s parent
-              <code>li</code> element to be open by default using the <code>active</code> class, set
-              <code>aria-expanded=&quot;true&quot;</code> on the control instead. The plugin will automatically toggle
-              this attribute based on whether or not the collapsible element has been opened or closed.</p>
-          </blockquote>
-          <pre><code class="language-html">&lt;ul class=&quot;metismenu&quot; id=&quot;menu&quot;&gt;
-  &lt;li class=&quot;mm-active&quot;&gt;
-    &lt;a href=&quot;#&quot; aria-expanded=&quot;true&quot;&gt;Menu 1&lt;/a&gt;
-    &lt;ul&gt;
-    ...
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;a href=&quot;#&quot; aria-expanded=&quot;false&quot;&gt;Menu 2&lt;/a&gt;
-    &lt;ul&gt;
-    ...
-    &lt;/ul&gt;
-  &lt;/li&gt;
+      </li>
+      <li>
+        <p>Make expand/collapse controls accessible</p>
+        <blockquote>
+          <p>Be sure to add <code>aria-expanded</code> to the element <code>a</code>. This attribute explicitly
+            defines the current state of the collapsible element to screen readers and similar assistive technologies.
+            If the collapsible element is closed by default, it should have a value of
+            <code>aria-expanded=&quot;false&quot;</code>. If you&#39;ve set the collapsible element&#39;s parent
+            <code>li</code> element to be open by default using the <code>active</code> class, set
+            <code>aria-expanded=&quot;true&quot;</code> on the control instead. The plugin will automatically toggle
+            this attribute based on whether or not the collapsible element has been opened or closed.</p>
+        </blockquote>
+        <pre><code class="language-html">&lt;ul class=&quot;metismenu&quot; id=&quot;menu&quot;&gt;
+&lt;li class=&quot;mm-active&quot;&gt;
+  &lt;a href=&quot;#&quot; aria-expanded=&quot;true&quot;&gt;Menu 1&lt;/a&gt;
+  &lt;ul&gt;
   ...
-&lt;/ul&gt;</code></pre>
-        </li>
-        <li>
-          <p>Arrow Options</p>
-          <blockquote>
-            <p>add <code>has-arrow</code> class to <code>a</code> element</p>
-          </blockquote>
-          <pre><code class="language-html">&lt;ul class=&quot;metismenu&quot; id=&quot;menu&quot;&gt;
-  &lt;li class=&quot;mm-active&quot;&gt;
-    &lt;a class=&quot;has-arrow&quot; href=&quot;#&quot; aria-expanded=&quot;true&quot;&gt;Menu 1&lt;/a&gt;
-    &lt;ul&gt;
-    ...
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;a class=&quot;has-arrow&quot; href=&quot;#&quot; aria-expanded=&quot;false&quot;&gt;Menu 2&lt;/a&gt;
-    &lt;ul&gt;
-    ...
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+  &lt;a href=&quot;#&quot; aria-expanded=&quot;false&quot;&gt;Menu 2&lt;/a&gt;
+  &lt;ul&gt;
+  ...
+  &lt;/ul&gt;
+&lt;/li&gt;
 ...
 &lt;/ul&gt;</code></pre>
-        </li>
-        <li>
-          <p>Call the plugin:</p>
-          <pre><code class="language-javascript">new MetisMenu(&quot;#menu&quot;);
+      </li>
+      <li>
+        <p>Arrow Options</p>
+        <blockquote>
+          <p>add <code>has-arrow</code> class to <code>a</code> element</p>
+        </blockquote>
+        <pre><code class="language-html">&lt;ul class=&quot;metismenu&quot; id=&quot;menu&quot;&gt;
+&lt;li class=&quot;mm-active&quot;&gt;
+  &lt;a class=&quot;has-arrow&quot; href=&quot;#&quot; aria-expanded=&quot;true&quot;&gt;Menu 1&lt;/a&gt;
+  &lt;ul&gt;
+  ...
+  &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+  &lt;a class=&quot;has-arrow&quot; href=&quot;#&quot; aria-expanded=&quot;false&quot;&gt;Menu 2&lt;/a&gt;
+  &lt;ul&gt;
+  ...
+  &lt;/ul&gt;
+&lt;/li&gt;
+...
+&lt;/ul&gt;</code></pre>
+      </li>
+      <li>
+        <p>Call the plugin:</p>
+        <pre><code class="language-javascript">new MetisMenu(&quot;#menu&quot;);
 // or
 MetisMenu.attach(&#39;#menu&#39;);</code></pre>
-        </li>
-      </ol>
-      <h3 id="stopping-list-opening-on-certain-elements">Stopping list opening on certain elements</h3>
-      <p>Setting aria-disabled=&quot;true&quot; in the <code>&lt;a&gt;</code> element as shown will stop metisMenu
-        opening the menu for that particular list. This can be changed dynamically and will be obeyed correctly:</p>
-      <pre><code class="language-html">&lt;a href=&quot;#&quot; aria-expanded=&quot;false&quot; aria-disabled=&quot;true&quot;&gt;List 1&lt;/a&gt;</code></pre>
-      <h2 id="options">Options</h2>
-      <h4 id="toggle">toggle</h4>
-      <p>Type: <code>Boolean</code>
-        Default: <code>true</code></p>
-      <p>For auto collapse support.</p>
-      <pre><code class="language-javascript"> new MetisMenu(&quot;#menu&quot;, {
-  toggle: false
+      </li>
+    </ol>
+    <h3 id="stopping-list-opening-on-certain-elements">Stopping list opening on certain elements</h3>
+    <p>Setting aria-disabled=&quot;true&quot; in the <code>&lt;a&gt;</code> element as shown will stop metisMenu
+      opening the menu for that particular list. This can be changed dynamically and will be obeyed correctly:</p>
+    <pre><code class="language-html">&lt;a href=&quot;#&quot; aria-expanded=&quot;false&quot; aria-disabled=&quot;true&quot;&gt;List 1&lt;/a&gt;</code></pre>
+    <h2 id="options">Options</h2>
+    <h4 id="toggle">toggle</h4>
+    <p>Type: <code>Boolean</code>
+      Default: <code>true</code></p>
+    <p>For auto collapse support.</p>
+    <pre><code class="language-javascript"> new MetisMenu(&quot;#menu&quot;, {
+toggle: false
 });</code></pre>
-      <h4 id="triggerelement">triggerElement</h4>
-      <p>Type: <code>css selector</code>
-        Default: <code>a</code></p>
-      <pre><code class="language-javascript">new MetisMenu(&quot;#menu&quot;, {
-  triggerElement: &#39;.nav-link&#39; // bootstrap 4
+    <h4 id="triggerelement">triggerElement</h4>
+    <p>Type: <code>css selector</code>
+      Default: <code>a</code></p>
+    <pre><code class="language-javascript">new MetisMenu(&quot;#menu&quot;, {
+triggerElement: &#39;.nav-link&#39; // bootstrap 4
 });</code></pre>
-      <h4 id="parenttrigger">parentTrigger</h4>
-      <p>Type: <code>css selector</code>
-        Default: <code>li</code></p>
-      <pre><code class="language-javascript">new MetisMenu(&quot;#menu&quot;, {
-  parentTrigger: &#39;.nav-item&#39; // bootstrap 4
+    <h4 id="parenttrigger">parentTrigger</h4>
+    <p>Type: <code>css selector</code>
+      Default: <code>li</code></p>
+    <pre><code class="language-javascript">new MetisMenu(&quot;#menu&quot;, {
+parentTrigger: &#39;.nav-item&#39; // bootstrap 4
 });</code></pre>
-      <h4 id="submenu">subMenu</h4>
-      <p>Type: <code>css selector</code>
-        Default: <code>ul</code></p>
-      <pre><code class="language-javascript">new MetisMenu(&quot;#menu&quot;, {
-  subMenu: &#39;.nav.flex-column&#39; // bootstrap 4
+    <h4 id="submenu">subMenu</h4>
+    <p>Type: <code>css selector</code>
+      Default: <code>ul</code></p>
+    <pre><code class="language-javascript">new MetisMenu(&quot;#menu&quot;, {
+subMenu: &#39;.nav.flex-column&#39; // bootstrap 4
 });</code></pre>
-      <h2 id="api">API</h2>
-      <h4 id="dispose">dispose</h4>
-      <p>For stop and destroy metisMenu.</p>
-      <pre><code class="language-javascript">const mm = new MetisMenu(&quot;#menu&quot;);
+    <h2 id="api">API</h2>
+    <h4 id="dispose">dispose</h4>
+    <p>For stop and destroy metisMenu.</p>
+    <pre><code class="language-javascript">const mm = new MetisMenu(&quot;#menu&quot;);
 mm.dispose();</code></pre>
-      <h4 id="update">update</h4>
-      <p>Re-init metisMenu.</p>
-      <pre><code class="language-javascript">const mm = new MetisMenu(&quot;#menu&quot;);
+    <h4 id="update">update</h4>
+    <p>Re-init metisMenu.</p>
+    <pre><code class="language-javascript">const mm = new MetisMenu(&quot;#menu&quot;);
 mm.dispose();
 // ajax ...
 mm.update();</code></pre>
-      <h2 id="events">Events</h2>
-      <table>
-        <thead>
-          <tr>
-            <th><strong>Event Type</strong></th>
-            <th><strong>Description</strong></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>show.metisMenu</td>
-            <td>This event fires immediately when the <code>show</code> instance method is called.</td>
-          </tr>
-          <tr>
-            <td>shown.metisMenu</td>
-            <td>This event is fired when a collapse <code>ul</code> element has been made visible to the user (will wait
-              for CSS transitions to complete).</td>
-          </tr>
-          <tr>
-            <td>hide.metisMenu</td>
-            <td>This event is fired immediately when the <code>hide</code> method has been called.</td>
-          </tr>
-          <tr>
-            <td>hidden.metisMenu</td>
-            <td>This event is fired when a collapse <code>ul</code> element has been hidden from the user (will wait for
-              CSS transitions to complete).</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2 id="events">Events</h2>
+    <table>
+      <thead>
+        <tr>
+          <th><strong>Event Type</strong></th>
+          <th><strong>Description</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>show.metisMenu</td>
+          <td>This event fires immediately when the <code>show</code> instance method is called.</td>
+        </tr>
+        <tr>
+          <td>shown.metisMenu</td>
+          <td>This event is fired when a collapse <code>ul</code> element has been made visible to the user (will wait
+            for CSS transitions to complete).</td>
+        </tr>
+        <tr>
+          <td>hide.metisMenu</td>
+          <td>This event is fired immediately when the <code>hide</code> method has been called.</td>
+        </tr>
+        <tr>
+          <td>hidden.metisMenu</td>
+          <td>This event is fired when a collapse <code>ul</code> element has been hidden from the user (will wait for
+            CSS transitions to complete).</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card" id="author">
+<div class="card-body">
+  <h5 class="card-title">Author</h5>
+  <p class="card-text">Osman Nuri Okumuş</p>
+  <a href="https://github.com/onokumus" class="btn btn-primary">github/onokumus</a>
+  <a href="https://twitter.com/onokumus" class="btn btn-primary">twitter/onokumus</a>
+</div>
+</div>
+
+      <h3 id="license">License</h3>
+      <p>Copyright © 2021, <a href="https://github.com/onokumus">Osman Nuri Okumus</a>.<br>
+        Released under the <a href="LICENSE">MIT License</a>.</p>
+  </div>
+</div>
+
+
     </div>
     <!-- /.container -->
   </main>
-  
+
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
