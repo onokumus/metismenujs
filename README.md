@@ -3,6 +3,8 @@
 
 > MetisMenu: Collapsible menu plugin with Vanilla-JS
 
+> This plugin does not support any version of IE browser.
+
 Please consider following this project's author, [Osman Nuri Okumus](https://github.com/onokumus), and consider starring the project to show your :heart: and support.
 
 - [Getting started](#getting-started)
