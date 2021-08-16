@@ -99,18 +99,17 @@ class MetisMenu {
 
   off<E extends Event>(evtType: E, handler: CustomEventListener<E>, options?: AddEventListenerOptions | boolean): MetisMenu;
 
-  off(evtType: MetisMenuEvents, handler: EventListener, options?: AddEventListenerOptions | boolean) {
+  off(evtType: MetisMenuEvents, handler: EventListener, options?: AddEventListenerOptions | boolean): MetisMenu {
     this.element.removeEventListener(evtType, handler, options);
     return this;
   }
 
-  emit<T extends object>(evtType: string, evtData: T, shouldBubble = false) {
+  emit<T extends object>(evtType: string, evtData: T, shouldBubble = false): void {
     const evt = new CustomEvent<T>(evtType, {
         bubbles: shouldBubble,
         detail: evtData,
       });
     this.element.dispatchEvent(evt);
-    return this;
   }
 
   toggle(ul: Element) {
