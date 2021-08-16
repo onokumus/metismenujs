@@ -23,8 +23,8 @@
     "css:dev": "sass scss:docs/assets/css",
     "css:prod": "sass scss:dist",
     "css:min": "sass scss/metismenujs.scss dist/metismenujs.min.css -s compressed",
-    "build": "npm run js:prod && npm run js:umd:min && npm run js:esm:min && npm run css:prod && npm run css:min",
-    "test": "eslint src/*.js",
+    "build": "npm run lint && npm run js:prod && npm run js:umd:min && npm run js:esm:min && npm run css:prod && npm run css:min",
+    "lint": "eslint src/*.ts",
     "tsc": "tsc -p tsconfig.json --declaration --declarationDir dist/types --outDir dist/modules"
   },
   "engines": {
