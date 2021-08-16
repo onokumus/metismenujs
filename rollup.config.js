@@ -21,17 +21,7 @@ export default [
         banner,
         format: "esm",
         sourcemap: true
-      }
-    ],
-    plugins: [
-      typescript({
-        typescript: require("typescript")
-      })
-    ]
-  },
-  {
-    input: "src/index.ts",
-    output: [
+      },
       {
         name: "MetisMenu",
         file: production ? pkg.main : 'docs/assets/js/metismenujs.js',
@@ -40,10 +30,6 @@ export default [
         sourcemap: true
       }
     ],
-    plugins: [
-      typescript({
-        typescript: require("typescript")
-      })
-    ]
-  },
+    plugins: [ typescript() ]
+  }
 ];
