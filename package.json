@@ -27,9 +27,6 @@
     "lint": "eslint src/*.ts",
     "tsc": "tsc -p tsconfig.json --declaration --declarationDir dist/types --outDir dist/modules"
   },
-  "engines": {
-    "node": ">=8"
-  },
   "repository": "onokumus/metismenujs",
   "keywords": [
     "accordion",
