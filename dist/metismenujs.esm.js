@@ -1,5 +1,5 @@
 /*!
-* metismenujs - v1.3.0
+* metismenujs - v1.3.1
 * MetisMenu: Collapsible menu plugin with Vanilla-JS
 * https://github.com/onokumus/metismenujs#readme
 *
@@ -20,26 +20,6 @@ const ClassName = {
     METIS: 'metismenu',
     SHOW: 'mm-show',
 };
-
-function matches(element, selector) {
-    const nativeMatches = element.matches
-        || element.webkitMatchesSelector
-        || element.msMatchesSelector;
-    return nativeMatches.call(element, selector);
-}
-function closest(element, selector) {
-    if (element.closest) {
-        return element.closest(selector);
-    }
-    let el = element;
-    while (el) {
-        if (matches(el, selector)) {
-            return el;
-        }
-        el = el.parentElement;
-    }
-    return null;
-}
 
 /* eslint-disable max-len */
 class MetisMenu {
@@ -66,7 +46,7 @@ class MetisMenu {
         this.element.classList.add(METIS);
         [].slice.call(this.element.querySelectorAll(this.config.subMenu)).forEach((ul) => {
             ul.classList.add(COLLAPSE);
-            const li = closest(ul, this.config.parentTrigger);
+            const li = ul.closest(this.config.parentTrigger);
             if (li === null || li === void 0 ? void 0 : li.classList.contains(ACTIVE)) {
                 this.show(ul);
             }
@@ -88,7 +68,7 @@ class MetisMenu {
             if (target && target.tagName === 'A') {
                 evt.preventDefault();
             }
-            const li = closest(target, this.config.parentTrigger);
+            const li = target.closest(this.config.parentTrigger);
             const ul = li === null || li === void 0 ? void 0 : li.querySelector(this.config.subMenu);
             this.toggle(ul);
         }
@@ -112,22 +92,14 @@ class MetisMenu {
         return this;
     }
     emit(evtType, evtData, shouldBubble = false) {
-        let evt;
-        if (typeof CustomEvent === 'function') {
-            evt = new CustomEvent(evtType, {
-                bubbles: shouldBubble,
-                detail: evtData,
-            });
-        }
-        else {
-            evt = document.createEvent('CustomEvent');
-            evt.initCustomEvent(evtType, shouldBubble, false, evtData);
-        }
+        const evt = new CustomEvent(evtType, {
+            bubbles: shouldBubble,
+            detail: evtData,
+        });
         this.element.dispatchEvent(evt);
-        return this;
     }
     toggle(ul) {
-        const li = closest(ul, this.config.parentTrigger);
+        const li = ul.closest(this.config.parentTrigger);
         if (li === null || li === void 0 ? void 0 : li.classList.contains(ClassName.ACTIVE)) {
             this.hide(ul);
         }
@@ -151,7 +123,7 @@ class MetisMenu {
                 shownElement: ul,
             });
         };
-        const li = closest(ul, this.config.parentTrigger);
+        const li = ul.closest(this.config.parentTrigger);
         li === null || li === void 0 ? void 0 : li.classList.add(ACTIVE);
         const a = li === null || li === void 0 ? void 0 : li.querySelector(this.config.triggerElement);
         a === null || a === void 0 ? void 0 : a.setAttribute('aria-expanded', 'true');
@@ -189,7 +161,7 @@ class MetisMenu {
         this.emit('hide.metisMenu', {
             hideElement: ul,
         });
-        const li = closest(ul, this.config.parentTrigger);
+        const li = ul.closest(this.config.parentTrigger);
         li === null || li === void 0 ? void 0 : li.classList.remove(ACTIVE);
         const complete = () => {
             ul.classList.remove(COLLAPSING);
@@ -221,5 +193,5 @@ class MetisMenu {
     }
 }
 
-export default MetisMenu;
+export { MetisMenu as default };
 //# sourceMappingURL=metismenujs.esm.js.map

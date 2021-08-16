@@ -251,5 +251,5 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 + [LinkedIn Profile](https://linkedin.com/in/onokumus)
 
 ### License
-Copyright © 2020, [Osman Nuri Okumus](https://github.com/onokumus).
+Copyright © 2021, [Osman Nuri Okumus](https://github.com/onokumus).
 Released under the [MIT License](LICENSE).

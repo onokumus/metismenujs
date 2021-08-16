@@ -24,7 +24,7 @@ declare class MetisMenu {
     on<E extends Event>(evtType: E, handler: CustomEventListener<E>, options?: AddEventListenerOptions | boolean): MetisMenu;
     off<K extends EventType>(evtType: K, handler: SpecificEventListener<K>, options?: AddEventListenerOptions | boolean): MetisMenu;
     off<E extends Event>(evtType: E, handler: CustomEventListener<E>, options?: AddEventListenerOptions | boolean): MetisMenu;
-    emit<T extends object>(evtType: string, evtData: T, shouldBubble?: boolean): this;
+    emit<T extends object>(evtType: string, evtData: T, shouldBubble?: boolean): void;
     toggle(ul: Element): void;
     show(el: Element): void;
     hide(el: Element): void;
