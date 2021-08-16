@@ -58,6 +58,6 @@
   }
 
   .sidebar-nav .metismenu > li:hover > a.has-arrow:after {
-    transform: rotate(135deg);
+    transform: rotate(-135deg);
   }
 }
