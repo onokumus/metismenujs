@@ -2,7 +2,6 @@
 import { ClassName, Default, MetisMenuEvents } from './constant';
 import { IMMOptions } from './interface';
 import { EventType, SpecificEventListener, CustomEventListener } from './types';
-import { closest } from './util';
 
 class MetisMenu {
   protected config: IMMOptions;
@@ -42,7 +41,7 @@ class MetisMenu {
 
     [].slice.call(this.element.querySelectorAll<HTMLElement>(this.config.subMenu!)).forEach((ul: Element) => {
       ul.classList.add(COLLAPSE!);
-      const li = closest(ul, this.config.parentTrigger!);
+      const li = ul.closest(this.config.parentTrigger!);
 
       if (li?.classList.contains(ACTIVE!)) {
         this.show(ul as HTMLElement);
@@ -69,7 +68,7 @@ class MetisMenu {
         evt!.preventDefault();
       }
 
-      const li = closest(target!, this.config.parentTrigger!);
+      const li = target!.closest(this.config.parentTrigger!);
       const ul = li?.querySelector(this.config.subMenu!);
       this.toggle(ul!);
     }
@@ -121,7 +120,7 @@ class MetisMenu {
   }
 
   toggle(ul: Element) {
-    const li = closest(ul, this.config.parentTrigger!);
+    const li = ul.closest(this.config.parentTrigger!);
     if (li?.classList.contains(ClassName.ACTIVE)) {
       this.hide(ul);
     } else {
@@ -148,7 +147,7 @@ class MetisMenu {
       });
     };
 
-    const li = closest(ul, this.config.parentTrigger!);
+    const li = ul.closest(this.config.parentTrigger!);
     li?.classList.add(ACTIVE!);
 
     const a = li?.querySelector<HTMLElement>(this.config.triggerElement!);
@@ -194,7 +193,7 @@ class MetisMenu {
       hideElement: ul,
     });
 
-    const li = closest(ul, this.config.parentTrigger!);
+    const li = ul.closest(this.config.parentTrigger!);
     li?.classList.remove(ACTIVE!);
 
     const complete = () => {
