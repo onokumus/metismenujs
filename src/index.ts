@@ -105,16 +105,10 @@ class MetisMenu {
   }
 
   emit<T extends object>(evtType: string, evtData: T, shouldBubble = false) {
-    let evt: CustomEvent<T>;
-    if (typeof CustomEvent === 'function') {
-      evt = new CustomEvent<T>(evtType, {
+    const evt = new CustomEvent<T>(evtType, {
         bubbles: shouldBubble,
         detail: evtData,
       });
-    } else {
-      evt = document.createEvent('CustomEvent');
-      evt.initCustomEvent(evtType, shouldBubble, false, evtData);
-    }
     this.element.dispatchEvent(evt);
     return this;
   }
