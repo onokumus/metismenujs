@@ -4,3 +4,4 @@ export interface IMMOptions {
     parentTrigger?: string;
     subMenu?: string;
 }
+//# sourceMappingURL=interface.d.ts.map

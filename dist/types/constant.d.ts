@@ -1,5 +1,5 @@
-import { IMMOptions } from './interface';
-export declare type MetisMenuEvents = 'show.metisMenu' | 'shown.metisMenu' | 'hide.metisMenu' | 'hidden.metisMenu';
+import { IMMOptions } from './interface.js';
+export type MetisMenuEvents = 'show.metisMenu' | 'shown.metisMenu' | 'hide.metisMenu' | 'hidden.metisMenu';
 export declare const Default: IMMOptions;
 export declare const ClassName: {
     ACTIVE: string;
@@ -9,3 +9,4 @@ export declare const ClassName: {
     METIS: string;
     SHOW: string;
 };
+//# sourceMappingURL=constant.d.ts.map

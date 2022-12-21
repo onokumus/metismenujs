@@ -6,6 +6,8 @@
 * Made by Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
 * Under MIT License
 */
+'use strict';
+
 const Default = {
     parentTrigger: 'li',
     subMenu: 'ul',
@@ -219,5 +221,4 @@ class MetisMenu {
     }
 }
 
-export { MetisMenu, MetisMenu as default };
-//# sourceMappingURL=metismenujs.esm.js.map
+module.exports = MetisMenu;

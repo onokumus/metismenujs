@@ -220,4 +220,3 @@ class MetisMenu {
 }
 
 export { MetisMenu, MetisMenu as default };
-//# sourceMappingURL=metismenujs.esm.js.map

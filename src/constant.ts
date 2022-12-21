@@ -1,4 +1,4 @@
-import { IMMOptions } from './interface';
+import { IMMOptions } from './interface.js';
 
 export type MetisMenuEvents =
   | 'show.metisMenu'
