@@ -1,15 +1,26 @@
-# metismenujs [![NPM version](https://img.shields.io/npm/v/metismenujs.svg?style=flat)](https://www.npmjs.com/package/metismenujs) [![NPM monthly downloads](https://img.shields.io/npm/dm/metismenujs.svg?style=flat)](https://npmjs.org/package/metismenujs) [![NPM total downloads](https://img.shields.io/npm/dt/metismenujs.svg?style=flat)](https://npmjs.org/package/metismenujs)  
+<div align="center">
+   <h1>
+        <a href="https://onokumus.github.io/metismenujs">metismenujs</a>
+    </h1>
+    <p align="center">Collapsible menu plugin with Vanilla-JS</p>
+</div>
+
+<div align="center">
+
+[![npm version](https://img.shields.io/npm/v/metismenujs.svg?style=flat-square)](https://www.npmjs.org/package/metismenujs)
+[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=metismenujs&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=metismenujs)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/metismenujs?style=flat-square)](https://bundlephobia.com/package/metismenujs@latest)
+[![npm downloads](https://img.shields.io/npm/dm/metismenujs.svg?style=flat-square)](https://npm-stat.com/charts.html?package=metismenujs)
 [![](https://data.jsdelivr.com/v1/package/npm/metismenujs/badge)](https://www.jsdelivr.com/package/npm/metismenujs) [![Packagist](https://img.shields.io/packagist/v/onokumus/metismenujs.svg)](https://packagist.org/packages/onokumus/metismenujs)
+</div>
 
-> MetisMenu: Collapsible menu plugin with Vanilla-JS
 
-> This plugin does not support any version of IE browser.
+## Table of Contents
 
-Please consider following this project's author, [Osman Nuri Okumus](https://github.com/onokumus), and consider starring the project to show your :heart: and support.
-
-- [Getting started](#getting-started)
-  * [Install](#install)
-  * [Download](#download)
+- [Browser Support](#browser-support)
+- [Installing](#installing)
+  - [Package manager](#package-manager)
+  - [CDN](#cdn)
 - [Usage](#usage)
   * [Stopping list opening on certain elements](#stopping-list-opening-on-certain-elements)
 - [Options](#options)
@@ -30,70 +41,150 @@ Please consider following this project's author, [Osman Nuri Okumus](https://git
   * [License](#license)
 
 
-## Getting started
-### Install
-Install with [npm](https://www.npmjs.com/):
+## Browser Support
 
-```sh
-$ npm install metismenujs
+> This plugin does not support any version of IE browser.
+
+![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_48x48.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_48x48.png) | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_48x48.png) | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
+--- | --- | --- | --- | --- | --- |
+Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | ❌ |
+
+
+## Install
+
+### Package Managers
+
+Using [npm](https://www.npmjs.com/):
+
+```bash
+npm install metismenujs
 ```
 
-Install with [yarn](https://yarnpkg.com):
+Using [yarn](https://yarnpkg.com):
 
 ```sh
-$ yarn add metismenujs
+yarn add metismenujs
 ```
 
-Add project file to metismenu
+Using [pnpm](https://pnpm.io/):
+
+```sh
+pnpm add metismenujs
+```
+
+
+Once the package is installed, you can import the library using `import` or `require` approach:
+
 
 ```js
+// recommended approach
+import { MetisMenu } from 'metismenujs';
+```
+
+```js
+// You can also use the default export
 import MetisMenu from 'metismenujs';
+```
 
-// or
+If you use `require` for importing, **only default export is available**:
+
+```js
 const MetisMenu = require('metismenujs');
+```
 
-// create new instance
-const mm = new MetisMenu('#menu', {...});
+> **Note** CommonJS usage
+> In order to gain the TypeScript typings (for intellisense / autocomplete) while using CommonJS imports with `require()`, add the following to your `tsconfig.json`:
 
-// or call MetisMenu static attach method
-const mm = MetisMenu.attach('#menu', {...})
+```json
+{
+  "compilerOptions": {
+    "moduleResolution": "NodeNext"
+  }
+}
+```
+
+
+### CDN
+
+#### ES6 UMD browser module
+
+Using [jsDelivr](https://www.jsdelivr.com/) CDN:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.js"></script>
+```
+
+Using [unpkg](https://unpkg.com/) CDN:
+
+```html
+<script src="https://unpkg.com/metismenujs/dist/metismenujs.min.js"></script>
+```
+
+#### ES6 ES module
+
+Using [jsDelivr](https://www.jsdelivr.com/) CDN:
+
+```html
+<script type="module">
+  import { MetisMenu } from 'https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.esm.min.js';
+</script>
+```
+
+Using [unpkg](https://unpkg.com/) CDN:
+
+```html
+<script type="module">
+  import { MetisMenu } from 'https://unpkg.com/metismenujs/dist/metismenujs.esm.min.js';
+</script>
 ```
 
 Install with [composer](https://getcomposer.org/)
 
-```sh
-$ composer require onokumus/metismenujs:dev-master
+```bash
+composer require onokumus/metismenujs:dev-master
 ```
 
 ### Download
 [download](https://github.com/onokumus/metismenujs/archive/master.zip)
 
+Ready to use files are located in the `dist` directory.
+
 ## Usage
 
 1. Include metismenujs StyleSheet
 
-  ```html
-  <link rel="stylesheet" href="https://unpkg.com/metismenujs/dist/metismenujs.min.css">
-  <!-- OR -->  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.css">
-  ```
+    ### Using CDN
 
-2. Include metismenujs plugin's code
+    [jsDelivr](https://www.jsdelivr.com/) :
 
-  ```html
-  <script src="https://unpkg.com/metismenujs/dist/metismenujs.min.js"></script>
-  <!-- OR -->
-  <script src="https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.js"></script>
-  ```
+    ```html
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.css">
+    ```
 
-3. Add class `metismenu` to unordered list
+    [unpkg](https://unpkg.com/) :
+    ```html
+    <link rel="stylesheet" href="https://unpkg.com/metismenujs/dist/metismenujs.min.css">
+    ```
+
+    ### Using [Vite](https://vitejs.dev/), [Astro](https://astro.build/) etc.
+
+    ```js
+    import 'metismenujs/style';
+    ```
+    or sass source file
+    ```js
+    import 'metismenujs/sass';
+    ```
+
+
+2. Add class `metismenu` to unordered list
 
   ```html
   <ul class="metismenu" id="menu">
 
   </ul>
   ```
-4. Make expand/collapse controls accessible
+3. Make expand/collapse controls accessible
 
   > Be sure to add `aria-expanded` to the element `a`. This attribute explicitly defines the current state of the collapsible element to screen readers and similar assistive technologies. If the collapsible element is closed by default, it should have a value of `aria-expanded="false"`. If you've set the collapsible element's parent `li` element to be open by default using the `active` class, set `aria-expanded="true"` on the control instead. The plugin will automatically toggle this attribute based on whether or not the collapsible element has been opened or closed.
 
@@ -114,7 +205,7 @@ $ composer require onokumus/metismenujs:dev-master
     ...
     </ul>
   ```
-5. Arrow Options
+4. Arrow Options
 
   > add `has-arrow` class to `a` element
 
@@ -136,7 +227,7 @@ $ composer require onokumus/metismenujs:dev-master
   </ul>
   ```
 
-6. Call the plugin:
+5. Call the plugin:
 
   ```javascript
     new MetisMenu("#menu");
