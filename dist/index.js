@@ -1,5 +1,5 @@
 /*!
-* metismenujs - v1.4.0-beta.1
+* metismenujs - v1.4.0-beta.2
 * MetisMenu: Collapsible menu plugin with Vanilla-JS
 * https://github.com/onokumus/metismenujs#readme
 *
@@ -38,6 +38,7 @@ class MetisMenu {
         this.config = Object.assign(Object.assign({}, Default), options);
         this.disposed = false;
         this.triggerArr = [];
+        this.boundEventHandler = this.clickEvent.bind(this);
         this.init();
     }
     static attach(el, opt) {
@@ -67,7 +68,7 @@ class MetisMenu {
                 return;
             }
             a === null || a === void 0 ? void 0 : a.setAttribute("aria-expanded", "false");
-            a === null || a === void 0 ? void 0 : a.addEventListener("click", this.clickEvent.bind(this));
+            a === null || a === void 0 ? void 0 : a.addEventListener("click", this.boundEventHandler);
             this.triggerArr.push(a);
         });
     }
@@ -91,7 +92,7 @@ class MetisMenu {
     }
     dispose() {
         this.triggerArr.forEach((arr) => {
-            arr.removeEventListener("click", this.clickEvent.bind(this));
+            arr.removeEventListener("click", this.boundEventHandler);
         });
         this.disposed = true;
     }

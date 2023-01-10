@@ -6,6 +6,7 @@ declare class MetisMenu {
     protected isTransitioning: boolean;
     protected disposed: boolean;
     protected triggerArr: Array<Element>;
+    boundEventHandler: (evt?: Event) => void;
     /**
      * Creates an instance of MetisMenu.
      *
