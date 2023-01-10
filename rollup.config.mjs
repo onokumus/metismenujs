@@ -35,7 +35,7 @@ export default [
     output: [
       {
         name: "MetisMenu",
-        file: pkg.main,
+        file: production ? pkg.main : "docs/assets/js/metismenujs.js",
         banner,
         format: "umd",
         sourcemap: true,
