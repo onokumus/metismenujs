@@ -18,6 +18,8 @@ class MetisMenu {
 
   protected triggerArr: Array<Element>;
 
+  boundEventHandler: (evt?: Event) => void;
+
   /**
    * Creates an instance of MetisMenu.
    *
@@ -32,6 +34,7 @@ class MetisMenu {
     this.config = { ...Default, ...options };
     this.disposed = false;
     this.triggerArr = [];
+    this.boundEventHandler = this.clickEvent.bind(this);
     this.init();
   }
 
@@ -69,7 +72,7 @@ class MetisMenu {
 
       a?.setAttribute("aria-expanded", "false");
 
-      a?.addEventListener("click", this.clickEvent.bind(this));
+      a?.addEventListener("click", this.boundEventHandler);
       this.triggerArr.push(a!);
     });
   }
@@ -97,7 +100,7 @@ class MetisMenu {
 
   dispose() {
     this.triggerArr.forEach((arr) => {
-      arr.removeEventListener("click", this.clickEvent.bind(this));
+      arr.removeEventListener("click", this.boundEventHandler);
     });
     this.disposed = true;
   }
