@@ -32,7 +32,7 @@
     + [dispose](#dispose)
     + [update](#update)
 - [Events](#events)
-- [Migrating to v1.0.3 from v1.2.0](#migrating-to-v103-from-v120)
+- [Migrating to v1.0.3 from v1.4.0](#migrating-to-v103-from-v140)
 - [Demo](#demo)
 - [About](#about)
   * [Related projects](#related-projects)
@@ -316,13 +316,20 @@ Re-init metisMenu.
 |hide.metisMenu    |This event is fired immediately when the `hide` method has been called. |
 |hidden.metisMenu  |This event is fired when a collapse `ul` element has been hidden from the user (will wait for CSS transitions to complete).|
 
-## Migrating to v1.0.3 from v1.2.0
+## CSS custom properties (variables)
+|**Property**   |  **Default**   |**Description** |
+|--------------|--------------|--------------|
+|--mm-transition-timing-function  |  ease  |This property sets how intermediate values are calculated for CSS properties being affected by a transition effect. |
+|--mm-trantisition-duration |  0.35s   |This property sets the length of time a transition animation should take to complete. |
+
+
+## Migrating to v1.0.3 from v1.4.0
 
 - Update `metisMenu.js` & `metisMenu.css` files
 - Change `active` class to `mm-active`
 
 ## Demo
-[https://onokumus.com/metismenujs](https://onokumus.com/metismenujs)
+[https://onokumus.github.io/metismenujs](https://onokumus.github.io/metismenujs)
 
 Contains a simple HTML file to demonstrate metisMenu plugin.
 
@@ -342,5 +349,5 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 + [LinkedIn Profile](https://linkedin.com/in/onokumus)
 
 ### License
-Copyright © 2021, [Osman Nuri Okumus](https://github.com/onokumus).
+Copyright © 2023, [Osman Nuri Okumuş](https://github.com/onokumus).
 Released under the [MIT License](LICENSE).

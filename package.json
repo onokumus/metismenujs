@@ -1,6 +1,6 @@
 {
   "name": "metismenujs",
-  "version": "1.4.0-beta.2",
+  "version": "1.4.0-beta.3",
   "description": "MetisMenu: Collapsible menu plugin with Vanilla-JS",
   "main": "dist/metismenujs.js",
   "module": "dist/metismenujs.esm.js",
@@ -36,7 +36,7 @@
     "js:prod": "rollup -c",
     "js:umd:min": "terser --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/metismenujs.js.map,includeSources,url=metismenujs.min.js.map\" --output dist/metismenujs.min.js dist/metismenujs.js",
     "js:esm:min": "terser --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/metismenujs.esm.js.map,includeSources,url=metismenujs.esm.min.js.map\" --output dist/metismenujs.esm.min.js dist/metismenujs.esm.js",
-    "css:dev": "sass scss:docs/assets/css",
+    "css:dev": "sass scss:docs/assets/css -w -s compressed",
     "css:prod": "sass scss:dist",
     "css:min": "sass scss/metismenujs.scss dist/metismenujs.min.css -s compressed",
     "lint": "eslint src/*.ts",

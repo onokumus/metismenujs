@@ -1,5 +1,5 @@
 /*!
-* metismenujs - v1.4.0-beta.2
+* metismenujs - v1.4.0-beta.3
 * MetisMenu: Collapsible menu plugin with Vanilla-JS
 * https://github.com/onokumus/metismenujs#readme
 *
