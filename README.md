@@ -24,10 +24,6 @@
 - [Usage](#usage)
   * [Stopping list opening on certain elements](#stopping-list-opening-on-certain-elements)
 - [Options](#options)
-    + [toggle](#toggle)
-    + [triggerElement](#triggerelement)
-    + [parentTrigger](#parenttrigger)
-    + [subMenu](#submenu)
 - [API](#api)
     + [dispose](#dispose)
     + [update](#update)
@@ -248,10 +244,10 @@ Setting aria-disabled="true" in the `<a>` element as shown will stop metisMenu o
 
 | Option | Type | Default | Description | Example |
 | --- | --- | --- | --- | --- |
-| `toggle` | `Boolean` | `true` | For auto collapse support. | `new MetisMenu("#menu", { toggle: false });` |
-| `triggerElement` | `css selector` | `a` | | `new MetisMenu("#menu", { triggerElement: '.nav-link' });` |
-| `parentTrigger` | `css selector` | `li` | | `new MetisMenu("#menu", { parentTrigger: '.nav-item' });` |
-| `subMenu` | `css selector` | `ul` | | `new MetisMenu("#menu", { subMenu: '.nav.flex-column' });` |
+| toggle | Boolean | true | For auto collapse support. | `new MetisMenu("#menu", { toggle: false });` |
+| triggerElement | css selector | a | | `new MetisMenu("#menu", { triggerElement: '.nav-link' });` |
+| parentTrigger | css selector | li | | `new MetisMenu("#menu", { parentTrigger: '.nav-item' });` |
+| subMenu | css selector | ul | | `new MetisMenu("#menu", { subMenu: '.nav.flex-column' });` |
 
 
 ## API
