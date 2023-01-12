@@ -255,7 +255,8 @@ Setting aria-disabled="true" in the `<a>` element as shown will stop metisMenu o
 
 
 ## API
-#### dispose
+
+### dispose
 
 For stop and destroy metisMenu.
 
@@ -264,15 +265,15 @@ For stop and destroy metisMenu.
  mm.dispose();
 ```
 
-#### update
+### update
 
 Re-init metisMenu.
 
 ```javascript
- const mm = new MetisMenu("#menu");
- mm.dispose();
- // ajax ...
- mm.update();
+const mm = new MetisMenu("#menu");
+mm.dispose();
+// ajax ...
+mm.update();
 ```
 
 ## Events
@@ -308,8 +309,8 @@ Contains a simple HTML file to demonstrate metisMenu plugin.
 ## About
 
 ### Related projects
-- [metismenu](https://www.npmjs.com/package/metismenu): A jQuery menu plugin | [homepage](https://github.com/onokumus/metismenu#readme "A jQuery menu plugin")
-- [@metismenu/react](https://www.npmjs.com/package/@metismenu/react): react.js component for metismenu | [homepage](https://github.com/onokumus/metismenu-react#readme "react.js component for metismenu")
+- [metismenu](https://www.npmjs.com/package/metismenu): A jQuery menu plugin | [homepage](https://github.com/onokumus/metismenu)
+- [@metismenu/react](https://www.npmjs.com/package/@metismenu/react): react.js component for metismenu | [homepage](https://github.com/metismenu/metismenu-react)
 
 ### Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
