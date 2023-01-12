@@ -1,6 +1,6 @@
 Package.describe({
   name: 'onokumus:metismenujs',
-  version: '1.3.1',
+  version: '1.4.0',
   summary: 'A menu plugin',
   git: 'https://github.com/onokumus/metismenujs',
   documentation: 'README.md'
