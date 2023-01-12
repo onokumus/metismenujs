@@ -113,13 +113,13 @@ const MetisMenu = require('metismenujs');
 Using [jsDelivr](https://www.jsdelivr.com/) CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/metismenujs"></script>
 ```
 
 Using [unpkg](https://unpkg.com/) CDN:
 
 ```html
-<script src="https://unpkg.com/metismenujs/dist/metismenujs.min.js"></script>
+<script src="https://unpkg.com/metismenujs"></script>
 ```
 
 #### ES6 ES module
@@ -246,47 +246,13 @@ Setting aria-disabled="true" in the `<a>` element as shown will stop metisMenu o
 
 ## Options
 
-#### toggle
-Type: `Boolean`
-Default: `true`
+| Option | Type | Default | Description | Example |
+| --- | --- | --- | --- | --- |
+| `toggle` | `Boolean` | `true` | For auto collapse support. | `new MetisMenu("#menu", { toggle: false });` |
+| `triggerElement` | `css selector` | `a` | | `new MetisMenu("#menu", { triggerElement: '.nav-link' });` |
+| `parentTrigger` | `css selector` | `li` | | `new MetisMenu("#menu", { parentTrigger: '.nav-item' });` |
+| `subMenu` | `css selector` | `ul` | | `new MetisMenu("#menu", { subMenu: '.nav.flex-column' });` |
 
-For auto collapse support.
-
-```javascript
- new MetisMenu("#menu", {
-   toggle: false
- });
-```
-
-#### triggerElement
-Type: `css selector`
-Default: `a`
-
-```javascript
- new MetisMenu("#menu", {
-   triggerElement: '.nav-link' // bootstrap 5
- });
-```
-
-#### parentTrigger
-Type: `css selector`
-Default: `li`
-
-```javascript
- new MetisMenu("#menu", {
-   parentTrigger: '.nav-item' // bootstrap 5
- });
-```
-
-#### subMenu
-Type: `css selector`
-Default: `ul`
-
-```javascript
- new MetisMenu("#menu", {
-   subMenu: '.nav.flex-column' // bootstrap 5
- });
-```
 
 ## API
 #### dispose
