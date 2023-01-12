@@ -32,7 +32,9 @@
     + [dispose](#dispose)
     + [update](#update)
 - [Events](#events)
+- [CSS custom properties (variables)](#css-custom-properties-variables)
 - [Migrating to v1.0.3 from v1.4.0](#migrating-to-v103-from-v140)
+- [Examples](#examples)
 - [Demo](#demo)
 - [About](#about)
   * [Related projects](#related-projects)
@@ -262,7 +264,7 @@ Default: `a`
 
 ```javascript
  new MetisMenu("#menu", {
-   triggerElement: '.nav-link' // bootstrap 4
+   triggerElement: '.nav-link' // bootstrap 5
  });
 ```
 
@@ -272,7 +274,7 @@ Default: `li`
 
 ```javascript
  new MetisMenu("#menu", {
-   parentTrigger: '.nav-item' // bootstrap 4
+   parentTrigger: '.nav-item' // bootstrap 5
  });
 ```
 
@@ -282,7 +284,7 @@ Default: `ul`
 
 ```javascript
  new MetisMenu("#menu", {
-   subMenu: '.nav.flex-column' // bootstrap 4
+   subMenu: '.nav.flex-column' // bootstrap 5
  });
 ```
 
@@ -327,6 +329,10 @@ Re-init metisMenu.
 
 - Update `metisMenu.js` & `metisMenu.css` files
 - Change `active` class to `mm-active`
+
+## Examples
+
+[https://github.com/metismenu/examples](https://github.com/metismenu/examples)
 
 ## Demo
 [https://onokumus.github.io/metismenujs](https://onokumus.github.io/metismenujs)
