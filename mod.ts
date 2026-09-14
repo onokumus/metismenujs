@@ -1,3 +1,3 @@
-import MetisMenu from "./src/metismenujs";
+import MetisMenu from "./src/metismenujs.ts";
 
 export { MetisMenu };
