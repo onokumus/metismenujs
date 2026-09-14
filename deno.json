@@ -1,0 +1,19 @@
+{
+	"name": "@onokumus/metismenujs",
+	"version": "1.5.0",
+	"description": "MetisMenu: Collapsible menu plugin with Vanilla-JS",
+	"exports": "./mod.ts",
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.window"],
+		"strict": true
+	},
+	"publish": {
+		"include": [
+			"src/**/*.ts",
+			"src/**/*.scss",
+			"mod.ts",
+			"README.md",
+			"LICENSE"
+		]
+	}
+}
