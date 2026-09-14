@@ -1,6 +1,6 @@
-export interface IMMOptions {
-  toggle?: boolean;
-  triggerElement?: string;
-  parentTrigger?: string;
-  subMenu?: string;
+export interface MMOptions {
+	toggle?: boolean;
+	triggerElement?: string;
+	parentTrigger?: string;
+	subMenu?: string;
 }

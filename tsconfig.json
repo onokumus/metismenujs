@@ -1,23 +1,23 @@
 {
-	"compilerOptions": {
-		"target": "esnext",
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"moduleDetection": "force",
-		"module": "preserve",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"strict": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noImplicitOverride": true,
-		"declaration": true,
-		"emitDeclarationOnly": true,
-		"esModuleInterop": true,
-		"isolatedModules": true,
-		"verbatimModuleSyntax": true,
-		"skipLibCheck": false
-	},
-	"include": ["src/**/*.ts"]
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "moduleDetection": "force",
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": false
+  },
+  "include": ["src/**/*.ts"]
 }
