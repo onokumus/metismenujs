@@ -59,12 +59,6 @@
   "homepage": "https://github.com/onokumus/metismenujs#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "@typescript-eslint/parser": "^5.48.1",
-    "eslint": "^8.31.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-import": "^2.27.4",
     "prettier": "^2.8.2",
     "rollup": "^3.10.0",
     "sass": "^1.57.1",
