@@ -12,15 +12,17 @@
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/metismenujs?style=flat-square)](https://bundlephobia.com/package/metismenujs@latest)
 [![npm downloads](https://img.shields.io/npm/dm/metismenujs.svg?style=flat-square)](https://npm-stat.com/charts.html?package=metismenujs)
 [![](https://data.jsdelivr.com/v1/package/npm/metismenujs/badge)](https://www.jsdelivr.com/package/npm/metismenujs) [![Packagist](https://img.shields.io/packagist/v/onokumus/metismenujs.svg)](https://packagist.org/packages/onokumus/metismenujs)
+
+[![JSR](https://jsr.io/badges/@onokumus/metismenujs)](https://jsr.io/@onokumus/metismenujs)
 </div>
 
 
 ## Table of Contents
 
-- [Browser Support](#browser-support)
-- [Installing](#installing)
-  - [Package manager](#package-manager)
+- [Install](#install)
+  - [Package Managers](#package-managers)
   - [CDN](#cdn)
+  - [Download](#download)
 - [Usage](#usage)
   * [Stopping list opening on certain elements](#stopping-list-opening-on-certain-elements)
 - [Options](#options)
@@ -29,7 +31,7 @@
     + [update](#update)
 - [Events](#events)
 - [CSS custom properties (variables)](#css-custom-properties-variables)
-- [Migrating to v1.0.3 from v1.4.0](#migrating-to-v103-from-v140)
+- [Migration Guide](#migration-guide)
 - [Examples](#examples)
 - [Demo](#demo)
 - [About](#about)
@@ -37,15 +39,6 @@
   * [Contributing](#contributing)
   * [Author](#author)
   * [License](#license)
-
-
-## Browser Support
-
-> This plugin does not support any version of IE browser.
-
-![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_48x48.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_48x48.png) | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_48x48.png) | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
---- | --- | --- | --- | --- | --- |
-Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | ❌ |
 
 
 ## Install
@@ -70,17 +63,23 @@ Using [pnpm](https://pnpm.io/):
 pnpm add metismenujs
 ```
 
+Using [Deno](https://deno.com/):
 
-Once the package is installed, you can import the library using `import` or `require` approach:
+```sh
+deno add jsr:@onokumus/metismenujs
+```
+
+
+Once the package is installed, you can import the library:
 
 
 ```js
-// recommended approach
+// Recommended approach (Named Import)
 import { MetisMenu } from 'metismenujs';
 ```
 
 ```js
-// You can also use the default export
+// Deprecated in v1.5.0, will be removed in v2.0.0
 import MetisMenu from 'metismenujs';
 ```
 
@@ -90,7 +89,13 @@ If you use `require` for importing, **only default export is available**:
 const MetisMenu = require('metismenujs');
 ```
 
-> **Note** CommonJS usage
+If you are using **Deno** without an install step (direct URL/JSR import):
+
+```ts
+import { MetisMenu } from "jsr:@onokumus/metismenujs";
+```
+
+> **Note:** CommonJS usage
 > In order to gain the TypeScript typings (for intellisense / autocomplete) while using CommonJS imports with `require()`, add the following to your `tsconfig.json`:
 
 ```json
@@ -124,7 +129,7 @@ Using [jsDelivr](https://www.jsdelivr.com/) CDN:
 
 ```html
 <script type="module">
-  import { MetisMenu } from 'https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.esm.min.js';
+  import { MetisMenu } from 'https://cdn.jsdelivr.net/npm/metismenujs/dist/index.mjs';
 </script>
 ```
 
@@ -132,7 +137,7 @@ Using [unpkg](https://unpkg.com/) CDN:
 
 ```html
 <script type="module">
-  import { MetisMenu } from 'https://unpkg.com/metismenujs/dist/metismenujs.esm.min.js';
+  import { MetisMenu } from 'https://unpkg.com/metismenujs/dist/index.mjs';
 </script>
 ```
 
@@ -149,89 +154,91 @@ Ready to use files are located in the `dist` directory.
 
 ## Usage
 
-1. Include metismenujs StyleSheet
+1. **Include metismenujs StyleSheet**
 
-    ### Using CDN
-
-    [jsDelivr](https://www.jsdelivr.com/) :
+    Using CDN — [jsDelivr](https://www.jsdelivr.com/):
 
     ```html
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/metismenujs/dist/metismenujs.min.css">
     ```
 
-    [unpkg](https://unpkg.com/) :
+    Using CDN — [unpkg](https://unpkg.com/):
+
     ```html
     <link rel="stylesheet" href="https://unpkg.com/metismenujs/dist/metismenujs.min.css">
     ```
 
-    ### Using [Vite](https://vitejs.dev/), [Astro](https://astro.build/) etc.
+    Using [Vite](https://vitejs.dev/), [Astro](https://astro.build/) etc.:
 
     ```js
     import 'metismenujs/style';
     ```
-    or sass source file
+    or sass source file:
     ```js
     import 'metismenujs/sass';
     ```
 
+2. **Add class `metismenu` to unordered list**
 
-2. Add class `metismenu` to unordered list
+    ```html
+    <ul class="metismenu" id="menu">
 
-  ```html
-  <ul class="metismenu" id="menu">
+    </ul>
+    ```
 
-  </ul>
-  ```
-3. Make expand/collapse controls accessible
+3. **Make expand/collapse controls accessible**
 
-  > Be sure to add `aria-expanded` to the element `a`. This attribute explicitly defines the current state of the collapsible element to screen readers and similar assistive technologies. If the collapsible element is closed by default, it should have a value of `aria-expanded="false"`. If you've set the collapsible element's parent `li` element to be open by default using the `active` class, set `aria-expanded="true"` on the control instead. The plugin will automatically toggle this attribute based on whether or not the collapsible element has been opened or closed.
+    > Be sure to add `aria-expanded` to the element `a`. This attribute explicitly defines the current state of the collapsible element to screen readers and similar assistive technologies. If the collapsible element is closed by default, it should have a value of `aria-expanded="false"`. If you've set the collapsible element's parent `li` element to be open by default using the `active` class, set `aria-expanded="true"` on the control instead. The plugin will automatically toggle this attribute based on whether or not the collapsible element has been opened or closed.
 
-  ```html
-  <ul class="metismenu" id="menu">
+    ```html
+    <ul class="metismenu" id="menu">
+      <li class="mm-active">
+        <a href="#" aria-expanded="true">Menu 1</a>
+        <ul>
+        ...
+        </ul>
+      </li>
+      <li>
+        <a href="#" aria-expanded="false">Menu 2</a>
+        <ul>
+        ...
+        </ul>
+      </li>
+      ...
+      </ul>
+    ```
+
+4. **Arrow Options**
+
+    > add `has-arrow` class to `a` element
+
+    ```html
+    <ul class="metismenu" id="menu">
     <li class="mm-active">
-      <a href="#" aria-expanded="true">Menu 1</a>
+      <a class="has-arrow" href="#" aria-expanded="true">Menu 1</a>
       <ul>
       ...
       </ul>
     </li>
     <li>
-      <a href="#" aria-expanded="false">Menu 2</a>
+      <a class="has-arrow" href="#" aria-expanded="false">Menu 2</a>
       <ul>
       ...
       </ul>
     </li>
     ...
     </ul>
-  ```
-4. Arrow Options
+    ```
 
-  > add `has-arrow` class to `a` element
+5. **Call the plugin**
 
-  ```html
-  <ul class="metismenu" id="menu">
-  <li class="mm-active">
-    <a class="has-arrow" href="#" aria-expanded="true">Menu 1</a>
-    <ul>
-    ...
-    </ul>
-  </li>
-  <li>
-    <a class="has-arrow" href="#" aria-expanded="false">Menu 2</a>
-    <ul>
-    ...
-    </ul>
-  </li>
-  ...
-  </ul>
-  ```
+    ```javascript
+      // Recommended
+      new MetisMenu("#menu");
 
-5. Call the plugin:
-
-  ```javascript
-    new MetisMenu("#menu");
-    // or
-    MetisMenu.attach('#menu');
-  ```
+      // Deprecated in v1.5.0, will be removed in v2.0.0
+      MetisMenu.attach('#menu');
+    ```
 
 ### Stopping list opening on certain elements
 Setting aria-disabled="true" in the `<a>` element as shown will stop metisMenu opening the menu for that particular list. This can be changed dynamically and will be obeyed correctly:
@@ -254,7 +261,7 @@ Setting aria-disabled="true" in the `<a>` element as shown will stop metisMenu o
 
 ### dispose
 
-For stop and destroy metisMenu.
+Stops and destroys metisMenu.
 
 ```javascript
  const mm = new MetisMenu("#menu");
@@ -285,13 +292,30 @@ mm.update();
 |**Property**   |  **Default**   |**Description** |
 |--------------|--------------|--------------|
 |--mm-transition-timing-function  |  ease  |This property sets how intermediate values are calculated for CSS properties being affected by a transition effect. |
-|--mm-trantisition-duration |  0.35s   |This property sets the length of time a transition animation should take to complete. |
+|--mm-transition-duration |  0.35s   |This property sets the length of time a transition animation should take to complete. |
+|~~--mm-trantisition-duration~~ |  0.35s   |**Deprecated in v1.5.0, will be removed in v2.0.0.** Contains a typo — use `--mm-transition-duration` instead. |
 
 
-## Migrating to v1.0.3 from v1.4.0
+## Migration Guide
 
-- Update `metisMenu.js` & `metisMenu.css` files
-- Change `active` class to `mm-active`
+### From v1.4.x to v1.5.0
+
+The `v1.5.0` release focuses on modernizing the codebase and preparing for the next major version.
+
+- **Deprecations**:
+  - `MetisMenu.attach()` and the **default export** are now deprecated. They will be removed in `v2.0.0`.
+  - The `--mm-trantisition-duration` CSS custom property (contains a typo) is now deprecated. It will be removed in `v2.0.0`.
+- **Recommended Usage**:
+  - Use `new MetisMenu()` instead of `MetisMenu.attach()`.
+  - Use named imports: `import { MetisMenu } from 'metismenujs'`.
+  - Use `--mm-transition-duration` instead of `--mm-trantisition-duration`.
+
+### Preparing for v2.0.0
+
+Version `2.0.0` will be a breaking release. To ensure a smooth transition:
+- Update all your `MetisMenu.attach` calls to `new MetisMenu`.
+- Switch from default exports to named exports.
+- Replace any usage of `--mm-trantisition-duration` with `--mm-transition-duration`.
 
 ## Examples
 
@@ -300,7 +324,7 @@ mm.update();
 ## Demo
 [https://onokumus.github.io/metismenujs](https://onokumus.github.io/metismenujs)
 
-Contains a simple HTML file to demonstrate metisMenu plugin.
+Contains a simple HTML file to demonstrate the metisMenu plugin.
 
 ## About
 
@@ -318,5 +342,5 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 + [LinkedIn Profile](https://linkedin.com/in/onokumus)
 
 ### License
-Copyright © 2023, [Osman Nuri Okumuş](https://github.com/onokumus).
+Copyright © 2026, [Osman Nuri Okumuş](https://github.com/onokumus).
 Released under the [MIT License](LICENSE).
