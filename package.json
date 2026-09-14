@@ -1,56 +1,63 @@
 {
-  "name": "metismenujs",
-  "version": "1.4.0",
-  "description": "MetisMenu: Collapsible menu plugin with Vanilla-JS",
-  "main": "dist/metismenujs.js",
-  "module": "dist/metismenujs.esm.js",
-  "browser": "dist/metismenujs.min.js",
-  "unpkg": "dist/metismenujs.min.js",
-  "jsdelivr": "dist/metismenujs.min.js",
-  "typings": "./dist/types/index.d.ts",
-  "types": "dist/types/index.d.ts",
-  "sass": "./src/metismenujs.scss",
-  "style": "./dist/metismenujs.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/types/metismenujs.d.ts",
-        "default": "./dist/index.js"
-      }
-    },
-    "./package.json": "./package.json",
-    "./sass": "./src/metismenujs.scss",
-    "./style": "./dist/metismenujs.css"
-  },
-  "scripts": {
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "build:css": "sass src:dist && sass src/metismenujs.scss dist/metismenujs.min.css -s compressed",
-    "build": "npm run typecheck && npm run build:css"
-  },
-  "repository": "onokumus/metismenujs",
-  "keywords": [
-    "accordion",
-    "menu",
-    "metis",
-    "metisMenu",
-    "toggle"
-  ],
-  "author": "Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/onokumus/metismenujs/issues"
-  },
-  "homepage": "https://github.com/onokumus/metismenujs#readme",
-  "devDependencies": {
-    "sass": "^1.104.1",
-    "typescript": "^7.0.2"
-  }
+	"name": "metismenujs",
+	"version": "1.4.0",
+	"description": "MetisMenu: Collapsible menu plugin with Vanilla-JS",
+	"main": "dist/metismenujs.js",
+	"module": "dist/metismenujs.esm.js",
+	"browser": "dist/metismenujs.min.js",
+	"unpkg": "dist/metismenujs.min.js",
+	"jsdelivr": "dist/metismenujs.min.js",
+	"typings": "./dist/types/index.d.ts",
+	"types": "dist/types/index.d.ts",
+	"sass": "./src/metismenujs.scss",
+	"style": "./dist/metismenujs.css",
+	"files": [
+		"dist",
+		"src"
+	],
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/types/index.d.ts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/types/metismenujs.d.ts",
+				"default": "./dist/index.js"
+			}
+		},
+		"./package.json": "./package.json",
+		"./sass": "./src/metismenujs.scss",
+		"./style": "./dist/metismenujs.css"
+	},
+	"scripts": {
+		"check": "biome check --write",
+		"lint": "biome lint",
+		"format": "biome format",
+		"typecheck": "tsc -p tsconfig.json --noEmit",
+		"build:css": "sass src:dist && sass src/metismenujs.scss dist/metismenujs.min.css -s compressed",
+		"build": "npm run typecheck && npm run build:css"
+	},
+	"repository": "onokumus/metismenujs",
+	"keywords": [
+		"accordion",
+		"menu",
+		"metis",
+		"metisMenu",
+		"toggle"
+	],
+	"author": "Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/onokumus/metismenujs/issues"
+	},
+	"homepage": "https://github.com/onokumus/metismenujs#readme",
+	"devDependencies": {
+		"@biomejs/biome": "2.5.13",
+		"sass": "^1.104.1",
+		"typescript": "^7.0.2"
+	},
+	"allowScripts": {
+		"@parcel/watcher@2.6.0": true
+	}
 }
