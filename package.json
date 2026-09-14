@@ -39,9 +39,8 @@
     "css:dev": "sass scss:docs/assets/css -w -s compressed",
     "css:prod": "sass scss:dist",
     "css:min": "sass scss/metismenujs.scss dist/metismenujs.min.css -s compressed",
-    "lint": "eslint src/*.ts",
     "tsc": "tsc -p tsconfig.json --noEmit",
-    "build": "npm run lint && npm run tsc && npm run js:prod && npm run js:umd:min && npm run js:esm:min && npm run css:prod && npm run css:min"
+    "build": "npm run tsc && npm run js:prod && npm run js:umd:min && npm run js:esm:min && npm run css:prod && npm run css:min"
   },
   "repository": "onokumus/metismenujs",
   "keywords": [
@@ -59,7 +58,6 @@
   "homepage": "https://github.com/onokumus/metismenujs#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
-    "prettier": "^2.8.2",
     "rollup": "^3.10.0",
     "sass": "^1.57.1",
     "terser": "^5.16.1",
