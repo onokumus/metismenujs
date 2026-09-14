@@ -9,12 +9,11 @@
   "jsdelivr": "dist/metismenujs.min.js",
   "typings": "./dist/types/index.d.ts",
   "types": "dist/types/index.d.ts",
-  "sass": "scss/metismenujs.scss",
-  "style": "dist/metismenujs.css",
+  "sass": "./src/metismenujs.scss",
+  "style": "./dist/metismenujs.css",
   "files": [
     "dist",
-    "src",
-    "scss"
+    "src"
   ],
   "exports": {
     ".": {
@@ -28,15 +27,13 @@
       }
     },
     "./package.json": "./package.json",
-    "./sass": "./scss/metismenujs.scss",
+    "./sass": "./src/metismenujs.scss",
     "./style": "./dist/metismenujs.css"
   },
   "scripts": {
-    "css:dev": "sass scss:docs/assets/css -w -s compressed",
-    "css:prod": "sass scss:dist",
-    "css:min": "sass scss/metismenujs.scss dist/metismenujs.min.css -s compressed",
     "tsc": "tsc -p tsconfig.json --noEmit",
-    "build": "npm run tsc && npm run css:prod && npm run css:min"
+    "build:css": "sass src:dist && sass src/metismenujs.scss dist/metismenujs.min.css -s compressed",
+    "build": "npm run tsc && npm run build:css"
   },
   "repository": "onokumus/metismenujs",
   "keywords": [
@@ -53,7 +50,7 @@
   },
   "homepage": "https://github.com/onokumus/metismenujs#readme",
   "devDependencies": {
-    "sass": "^1.57.1",
+    "sass": "^1.104.1",
     "typescript": "^4.9.4"
   }
 }

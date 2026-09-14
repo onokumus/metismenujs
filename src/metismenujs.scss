@@ -1,16 +1,22 @@
 /*!
-* metismenujs - v1.4.0
-* A menu plugin
-* https://github.com/onokumus/metismenujs#readme
-*
-* Made by Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
-* Under MIT License
-*/
+ * metismenujs - v1.5.0
+ * A menu plugin
+ * https://github.com/onokumus/metismenujs#readme
+ *
+ * Made by Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
+ * Under MIT License
+ */
 
 :where(html) {
   --mm-transition-timing-function: ease;
-  --mm-trantisition-duration: 0.35s;
+
+  /**
+   * @deprecated `--mm-trantisition-duration` since v1.5.0 (contains a typo).
+   * Will be removed in v2.0.0 — use `--mm-transition-duration` instead.
+   */
+  --mm-transition-duration: var(--mm-trantisition-duration, 0.35s);
 }
+
 
 .metismenu .mm-collapse:not(.mm-show) {
   display: none;
@@ -21,7 +27,7 @@
   height: 0;
   overflow: hidden;
   flex-wrap: nowrap;
-  transition: height var(--mm-trantisition-duration) var(--mm-transition-timing-function);
+  transition: height var(--mm-transition-duration) var(--mm-transition-timing-function);
 }
 
 .metismenu .has-arrow {
@@ -40,7 +46,7 @@
   transform: rotate(45deg) translate(0, -50%);
   transform-origin: top;
   top: 50%;
-  transition: transform var(--mm-trantisition-duration) var(--mm-transition-timing-function);
+  transition: transform var(--mm-transition-duration) var(--mm-transition-timing-function);
 }
 
 *[dir="rtl"] .metismenu .has-arrow::after {
