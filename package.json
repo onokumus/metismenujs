@@ -1,14 +1,15 @@
 {
 	"name": "metismenujs",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"description": "MetisMenu: Collapsible menu plugin with Vanilla-JS",
-	"main": "dist/metismenujs.js",
-	"module": "dist/metismenujs.esm.js",
-	"browser": "dist/metismenujs.min.js",
-	"unpkg": "dist/metismenujs.min.js",
-	"jsdelivr": "dist/metismenujs.min.js",
-	"typings": "./dist/types/index.d.ts",
-	"types": "dist/types/index.d.ts",
+	"type": "module",
+	"main": "./dist/metismenujs.cjs",
+	"module": "./dist/index.mjs",
+	"browser": "./dist/metismenujs.js",
+	"unpkg": "./dist/metismenujs.js",
+	"jsdelivr": "./dist/metismenujs.js",
+	"typings": "./dist/metismenujs.d.cts",
+	"types": "./dist/metismenujs.d.cts",
 	"sass": "./src/metismenujs.scss",
 	"style": "./dist/metismenujs.css",
 	"files": [
@@ -18,25 +19,30 @@
 	"exports": {
 		".": {
 			"import": {
-				"types": "./dist/types/index.d.ts",
+				"types": "./dist/types/index.d.mts",
 				"default": "./dist/index.mjs"
 			},
 			"require": {
-				"types": "./dist/types/metismenujs.d.ts",
+				"types": "./dist/types/metismenujs.d.cts",
 				"default": "./dist/index.js"
 			}
 		},
 		"./package.json": "./package.json",
 		"./sass": "./src/metismenujs.scss",
-		"./style": "./dist/metismenujs.css"
+		"./style": "./dist/metismenujs.css",
+		"./dist/*": "./dist/*"
 	},
 	"scripts": {
+		"dev": "tsdown --watch",
+		"build:js": "tsdown",
+		"build:css": "sass src:dist && sass src/metismenujs.scss dist/metismenujs.min.css -s compressed",
+		"build": "npm run check && npm run typecheck && npm run build:js && npm run build:css",
 		"check": "biome check --write",
 		"lint": "biome lint",
 		"format": "biome format",
 		"typecheck": "tsc -p tsconfig.json --noEmit",
-		"build:css": "sass src:dist && sass src/metismenujs.scss dist/metismenujs.min.css -s compressed",
-		"build": "npm run typecheck && npm run build:css"
+		"css:dev": "sass src:docs/assets/css -w -s compressed",
+		"prepublishOnly": "npm run build"
 	},
 	"repository": "onokumus/metismenujs",
 	"keywords": [
