@@ -1,16 +1,23 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "moduleResolution": "NodeNext",
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "stripInternal": true,
-    "importHelpers": true,
-    "declaration": true,
-    "declarationMap": true,
-    "declarationDir": "types",
-  },
-  "include": ["src/**/*.ts"]
+	"compilerOptions": {
+		"target": "esnext",
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"moduleDetection": "force",
+		"module": "preserve",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"strict": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitOverride": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"skipLibCheck": false
+	},
+	"include": ["src/**/*.ts"]
 }
