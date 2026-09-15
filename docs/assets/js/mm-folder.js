@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-  new MetisMenu(".metisFolder", {
-    toggle: false
-  });
+document.addEventListener("DOMContentLoaded", () => {
+	new MetisMenu(".metisFolder", {
+		toggle: false,
+	});
 });

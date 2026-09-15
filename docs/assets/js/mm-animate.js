@@ -1,3 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    new MetisMenu('#menu');
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  new MetisMenu("#menu");
+});

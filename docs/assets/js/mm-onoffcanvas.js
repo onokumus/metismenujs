@@ -1,8 +1,7 @@
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", () => {
+	const leftAside = document.getElementById("left-aside");
+	new OnoffCanvas(leftAside);
 
-  const leftAside = document.getElementById("left-aside");
-  const leftAsideCanvas = new OnoffCanvas(leftAside);
-
-  const leftMenu = document.getElementById("menu1");
-  const leftMetisMenu = new MetisMenu(leftMenu);
+	const leftMenu = document.getElementById("menu1");
+	new MetisMenu(leftMenu);
 });
